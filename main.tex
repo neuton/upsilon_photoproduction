@@ -1,6 +1,13 @@
-\documentclass[10pt,prd,aps,nofootinbib,superscriptaddress]{revtex4}
-\usepackage{epsf,graphicx,xcolor,amsmath}
+%\documentclass[10pt,prd,aps,nofootinbib,superscriptaddress]{revtex4}
+\documentclass[prd,amsmath,%showkeys,
+twocolumn,floatfix,amssymb, preprintnumbers, nofootinbib, superscriptaddress]{revtex4} 
 
+
+\usepackage{epsf,graphicx,xcolor,amsmath}
+\usepackage{lipsum}
+%\linenumbers
+
+%\newcommand{\textit}{\it}
 \newcommand{\beq}{\begin{equation}}
 \newcommand{\eeq}{\end{equation}}
 \newcommand{\bea}{\begin{eqnarray}}
@@ -15,34 +22,88 @@
 \author{Oleksii Gryniuk}
 \affiliation{Institut f\"ur Kernphysik \& PRISMA$^+$  Cluster of Excellence, Johannes Gutenberg Universit\"at,  D-55099 Mainz, Germany}
 \author{Sylvester Joosten}
-\affiliation{ANL...}
+\affiliation{Argonne National Laboratory, Lemont, IL 60439, USA}
 \author{Zein-Eddine Meziani}
-\affiliation{ANL...}
+\affiliation{Argonne National Laboratory, Lemont, IL 60439, USA}
 \author{Marc Vanderhaeghen}
 \affiliation{Institut f\"ur Kernphysik \& PRISMA$^+$  Cluster of Excellence, Johannes Gutenberg Universit\"at,  D-55099 Mainz, Germany}
 \noaffiliation
 \date{\today}
 
 \begin{abstract}
-abstract...
+
+We present a dispersive analysis with the aim to extract the $\Upsilon$-p scattering length from $\gamma p \to \Upsilon p$ experiments in the threshold region. In this framework, the imaginary part of the $\Upsilon$-p forward scattering amplitude is obtained from $\gamma p \to \Upsilon p$ cross section measurements, and is constrained at high energies from existing HERA data. Its real part is calculated through a once-subtracted dispersion relation, and    
+the subtraction constant is proportional to the $\Upsilon$-p scattering length. We perform a feasibility study for $\Upsilon$-photoproduction experiments in the threshold region at an Electron-Ion Collider and discuss the sensitivity and precision that can be reached in the extraction of the $\Upsilon$-p scattering length. 
+
 \end{abstract}
 
 \maketitle
 
-\tableofcontents
+%\tableofcontents
 
 
 \section{Introduction}
 
-\newpage
 
-\section{$\Upsilon$ proton forward scattering amplitude}
+The interaction between heavy quarkonia, such as $J/\psi$ and $\Upsilon$, and light hadrons or nuclei provides a unique window on the gluonic van der Waals interaction in Quantum Chromo Dynamics (QCD). Being a small sized system, the heavy quarkonium $Q \bar Q$ can be treated as a color dipole, and the effective two-gluon exchange interaction between the quarkonium and the light hadron  or nucleus may be estimated from the knowledge of its chromo-electric polarizability, see 
+Refs.~\cite{Kharzeev:1995ij,Voloshin:2007dx,Hosaka:2016ypm} for reviews and references therein. 
+Provided this effective interaction is strong enough, 
+a bound state between the
+$Q \bar Q$ state and the light hadron or  nucleus may be formed~\cite{Brodsky:1989jd, Wasson:1991fb, Luke:1992tm}. 
+Early calculations for the chromo-electric polarizability,  treating the heavy quarkonium as a Coulombic bound state~\cite{Peskin:1979va,Bhanot:1979vb}, 
+yielded estimates for the quarkonium binding energy in 
+nuclear matter around $B_{J/\psi} \sim 10$~MeV for $J/\psi$,  and around $B_{\Upsilon} \sim 2 - 4$~MeV for $\Upsilon$ ~\cite{Luke:1992tm}. Many follow-up calculations have explored the possibility of quarkonium nuclear bound states within different theoretical  frameworks~\cite{Brodsky:1997gh, Ko:2000jx, Tsushima:2011kh, Yokota:2013sfa, Beane:2014sda}. 
 
-We consider the spin-averaged $\Upsilon p \to \Upsilon p$ forward elastic scattering process, which is described by an invariant amplitude $T_{\Upsilon p}$, depending on the crossing variable $\nu$. The latter is defined in terms of the Mandelstam invariant $s$ as:
+In recent years, the study of the excitation spectrum in the charmonium and bottomonium sectors above open charm and  open bottom thresholds has revealed a plethora of new  states, which cannot be explained as conventional $Q \bar Q$ bound states, see e.g. \cite{Olsen:2017bmm} for a recent experimental review. Several explanation for the nature of these exotic states have been put forward, ranging, among others, from tetraquark states based on QCD diquarks, QCD hybrids, hadronic molecules, or hadro-charmonium states. In contrast to conventional $Q \bar Q$ states above open charm or open bottom thresholds, for which the branching fractions in open flavor decay modes are found to be 2 or 3 orders of magnitudes larger than their hidden flavor decay modes, many of the newly found exotic states have in common that hidden flavor decay modes are discovery channels, and are only suppressed by a factor of 10 or less relative to the open flavor 
+decay modes. The understanding of the nature of these states may therefore shed another light on how hidden charm or hidden bottom systems interact with light quark systems. This is especially prominent in the hadro-quarkonium models for the exotic hadrons~\cite{Dubynskiy:2008mq}, in which 
+the charm or bottom $Q \bar Q$ pair remains tightly bound while interacting with the light quarks through a van der Waals interaction.
+
+Also in the baryon sector, narrow resonances involving two heavy quarks have been discovered in recent years. In the weak decay process
+$\Lambda_b \to J/\psi p K^-$, the LHCb Collaboration~\cite{Aaij:2015tga, Aaij:2019vzc} 
+has found evidence for such states in the  
+$J/\psi p$ mass spectrum, 
+and interpreted them as hidden-charm pentaquark states. 
+As two of these states were found approximately 5 MeV and 2 MeV below the $\Sigma_c^+ \bar D^0$ and $\Sigma_c^+ \bar D^{\ast 0}$ thresholds respectively, these states were interpreted in many works as loosely bound meson-baryon molecular states through $\pi$- or $\rho$-exchange interactions (see e.g. \cite{Roca:2015dva} among many others).  
+Alternatively, the two narrow pentaquark states near $\Sigma_c^+ \bar D^{\ast 0}$ threshold, $P_c(4440)^+$ and $P_c(4457)^+$ were predicted in \cite{Eides:2015dtr} as the $1/2^-$ and $3/2^-$ hyperfine partners of deeply bound hadro-charmonium states of $\psi(2S)$ and the proton, while the narrow pentaquark state $P_c(4312)^+$ 
+near $\Sigma_c^+ \bar D^0$ threshold was interpreted as a $1/2^+$ hadro-charmonium state of the $\chi_{c0}(1P)$ and the proton~\cite{Eides:2019tgv}. In such picture, the binding is due to the two-gluon exchange interaction between a compact quarkonium state within a proton, and is proportional to the chromo-electric polarizability of the quarkonium state. 
+The hadro-charmonium framework therefore relates the nature of such exotic states involving heavy quarks to the interaction of the heavy quarkonia with light hadrons. 
+
+The interaction of heavy quarkonia with light hadrons can 
+also be studied within lattice QCD. 
+Recently, the HAL QCD Collaboration~\cite{Sugiura:2019pye}  has performed improved lattice QCD studies of the s-wave effective potentials for 
+the  $J/\psi$-N system ($J = 1/2$ and $J = 3/2$), although still for an unphysical pion mass value of $m_\pi = 700$~MeV. For the $J/\psi$-nucleon system, the potential was found to be attractive, but not strong enough to allow for bound states. The lattice study extracted $J/\psi$-nucleon scattering lengths for both spin states: 
+$a_{\psi p}(J = 1/2) = 0.66 \pm 0.07$~fm, and 
+$a_{\psi p}(J = 3/2) = 0.38 \pm 0.05$~fm, indicating that the $J/\psi$-N state with 
+$J = 1/2$  obtains significantly stronger attraction than the $J = 3/2$ state. 
+
+In order to access the $J/\psi$-nucleon interaction from experiment, a previous work~\cite{Gryniuk:2016mpk} has performed a phenomenological analysis of the $J/\psi$-p forward scattering amplitude within a dispersive framework.  It related the imaginary part of the $J/\psi$-p forward scattering amplitude 
+to $\gamma p \to J/\psi p$ and $\gamma p \to c \bar c X$ cross section data, and calculated the real part through a once-subtracted dispersion relation, where the subtraction constant is directly related to the scattering length, and was fitted to the available data in the threshold region.   
+This dispersive framework extracted as value for the spin-averaged s-wave $J/\psi$-p scattering length $a_{\psi p} = 0.046 \pm 0.005$~fm, which can be translated into a 
+$J/\psi$ binding energy in nuclear matter 
+of $B_{\psi} = 2.7 \pm 0.3$~MeV. Such value for the scattering length is at the lower end of the range of values estimated in the literature, ranging from 
+$a_{\psi p} = 0.05$~fm~\cite{Kaidalov:1992hd} to 
+$a_{\psi p} = 0.37$~fm~\cite{Sibirtsev:2005ex}. However, as the current data base for the $J/\psi$ photoproduction in the threshold region is quite scarce, a reliable extraction clearly calls for new high statistics data in that region.  
+
+A dedicated experimental program to measure the  photoproduction of $J/\psi$ near threshold  has started in recent years at Jefferson Lab. The GlueX collaboration measured $J/\psi$ photoproduction near threshold using the GlueX detector in Hall D and published its first  results~\cite{Ali:2019lzf}. Experiment E12-16-007~\cite{Meziani:2016lhg} in Hall C was designed and performed as a direct search of the higher mass narrow width pentaquark state $P_c^+(4450)$ in photo-production. It ran during the spring of 2019 and preliminary results are expected soon~\cite{Joosten:2020}, while experiment E12-12-001~\cite{CLAS12-tcs:proposal} in Hall B has collected data using the CLAS12 detector and a hydrogen target during  2018/2019, with the analysis presently still underway. Furthermore, a more dedicated program of high precision $J/\psi$ electro- and photo-production  measurements on the proton  using the Solenoidal Large Intensity Device (SoLID) is planned in Hall A. The Jefferson Lab experiment E12-12-006~\cite{SoLIDjpsi:proposal} will be able to measure both the electro-production differential cross sections in the four momentum transfer $t$, as well as determine the total cross section very close to the threshold region on a nucleon.  
+
+One may also consider quarkonium production at threshold on a nucleon at the future Electron-Ion Collider (EIC) 
+machine~\cite{Accardi:2012qut}. Here, it is worth noting that access to the threshold region of the $J/\psi$ production is not possible due of the lower limit of the center of mass energy of the machine. Therefore, it is best to consider a higher center of mass energy provided by the threshold production of $\Upsilon$, hence reachable by the current machine design. With sufficient integrated luminosity a precision measurement of the photo- and electro-production of $\Upsilon$ is possible, and gives a way to address the question of the existence of bottom pentaquarks. As the $\Upsilon$ production probes the gluon fields in the nucleon, such study will also shed light on the origin of the proton mass. Gluons are estimated to account for more than half of the proton mass due to the strong gluon chromo-electric and chromo-magnetic fields inside the proton~\cite{Ji:1994av}. 
+At an EIC, the mass of the bottom quark as well as  the probe resolution in electro-production give two independent knobs in the investigation of the gluonic interaction between the $\Upsilon$ and the nucleon.  
+
+To prepare for such a program of $\Upsilon$ production at an EIC, we will extend in the present work our previous dispersive study of $J/\psi$ photoproduction to the case of $\Upsilon$ photoproduction. We will construct the $\Upsilon$-proton forward scattering amplitude in Section 2, relating  
+its imaginary part to $\gamma p \to \Upsilon p$ data. The real part will be calculated from a dispersion relation, involving one subtraction constant, which is directly related to the scattering length. 
+In Section 3, we will constrain the high-energy region from existing HERA data. As no data are available so far in the threshold region, we will consider several scenarios for the scattering length providing a range of estimates for the subtraction constant. 
+In Section 4, we will show results of a feasibility study for $\Upsilon$ photoproduction at the EIC, considering different beam settings, and discuss the sensitivity and precision in the extraction of the 
+$\Upsilon$-p scattering length from such experiment. 
+In Section 5, we present our conclusions. Some technical details on the EIC simulations are presented in an Appendix. 
+
+\section{$\Upsilon$-proton forward scattering amplitude}
+
+We consider the spin-averaged $\Upsilon p \to \Upsilon p$ forward elastic scattering process, which is described by an invariant amplitude $T_{\Upsilon p}$, depending on the crossing-symmetry variable $\nu$. The latter is defined in terms of the Mandelstam invariant $s$ as:
 \bea
 \nu = \frac{1}{2} (s - M^2 - M_\Upsilon^2),
 \eea
-where $M (M_\Upsilon)$ stand for the masses of the proton $(\Upsilon)$ respectively.  
+where $M$ and $M_\Upsilon$ stand for the masses of the proton and $\Upsilon(1S)$ state respectively.  
 The forward differential cross section for the $\Upsilon \, p \to \Upsilon \, p$ scattering process can then be expressed as:
 \bea
 \frac{d \sigma}{dt} \biggr|_{t = 0} (\Upsilon p \to \Upsilon p) = \frac{1}{64 \, \pi \, s \, q_{\Upsilon p}^2} \, \big| T_{\Upsilon p}(\nu) \big|^2,
@@ -54,15 +115,13 @@ where in the forward direction the momentum transfer $t = 0$, and where $q_{\Ups
  
 The imaginary part of the amplitude $T_{\Upsilon p}$ can be obtained as sum of elastic and inelastic discontinuities:
 \bea
-\Im T_{\Upsilon p}(\nu)  = \theta(\nu - \nu_{el}) \,  {\rm Disc}_{\rm el} T_{\Upsilon p}(\nu) +   \theta(\nu - \nu_{inel}) \,  {\rm Disc}_{\rm inel} T_{\Upsilon p}(\nu).
+\Im T_{\Upsilon p}(\nu)  &=& \theta(\nu - \nu_{el}) \,  {\rm Disc}_{\rm el} T_{\Upsilon p}(\nu) \nonumber \\
+&+&   \theta(\nu - \nu_{inel}) \,  {\rm Disc}_{\rm inel} T_{\Upsilon p}(\nu).
 \label{eq:disctot}
 \eea
-The elastic discontinuity starts from elastic threshold $s = s_{el} = (M_\Upsilon + M)^2 = 108.13$~GeV$^2$, or equivalently $\nu_{el} = M_\Upsilon M = 8.88$~GeV$^2$, whereas the inelastic discontinuity 
-starts at the $B \bar B$ meson production threshold, corresponding with $s_{inel} = (M + 2 M_B)^2 = 132.18$~GeV$^2$, or equivalently $\nu_{inel} = 20.90$~GeV$^2$. 
+The elastic discontinuity starts from elastic threshold $s = s_{el} = (M_\Upsilon + M)^2 = 108.13$~GeV$^2$, or equivalently $\nu_{el} = M_\Upsilon M = 8.88$~GeV$^2$, whereas the inelastic discontinuity starts at the $B \bar B$ meson production threshold, corresponding with $s_{inel} = (M + 2 M_B)^2 = 132.18$~GeV$^2$, or equivalently $\nu_{inel} = 20.90$~GeV$^2$. 
 
-Analogous to the $J/\psi$ case~\cite{Gryniuk:2016mpk}, 
-we will parameterize the elastic and inelastic discontinuities of the $\Upsilon p$  forward scattering amplitude 
-by the following 3-parameter forms, for $x = {\rm el/inel}$:
+Analogously to the $J/\psi$ case~\cite{Gryniuk:2016mpk}, we will parametrize the elastic and inelastic discontinuities of the $\Upsilon p$  forward scattering amplitude by the following 3-parameter forms, for $x = {\rm el/inel}$:
 \bea
 {\rm Disc}_{x} T_{\Upsilon p}(\nu)  &=& 
 C_{x} \left( 1 - \frac{\nu_{x}}{\nu} \right)^{b_{x}}  \left( \frac{\nu}{\nu_{x}} \right)^{a_{x}} ,
@@ -74,36 +133,45 @@ factors  $\sim \nu^{a_x}$ determine the Regge behavior of the amplitude at large
 In the following we will discuss how we can determine the respective parameters 
 appearing in the elastic and inelastic discontinuities. 
 
-We use the vector meson dominance (VMD) assumption to relate the $\Upsilon p$ elastic cross section 
-$\sigma_{\Upsilon p}^{el}$ to the total $\gamma p \to \Upsilon p$ photoproduction cross section~\cite{Barger:1975ng,Redlich:2000cb}, which fixes the 
-discontinuity across the elastic cut as: 
+For the 
+discontinuity across the elastic cut, 
+${\rm Disc}_{el} T_{\Upsilon p}$, we  use the vector meson dominance (VMD) assumption to relate the $\Upsilon p$ elastic cross section 
+$\sigma_{\Upsilon p}^{el}$ to the total $\gamma p \to \Upsilon p$ photo-production cross section~\cite{Barger:1975ng,Redlich:2000cb}: 
 \bea
 {\rm Disc}_{\rm el} T_{\Upsilon p}(\nu)  &=& 2 \sqrt{s} \, q_{\Upsilon p} \sigma_{\Upsilon p}^{el} 
-=  2 \sqrt{s} \, q_{\Upsilon p}  \left( \frac{M_\Upsilon}{e f_\Upsilon} \right)^2 \left( \frac{q_{\gamma p}}{q_{\Upsilon p}} \right)^2 \, 
-\sigma (\gamma p \to \Upsilon p), 
 \label{eq:sigmael}
+\\
+&\simeq&  2 \sqrt{s} \, q_{\Upsilon p}  \left( \frac{M_\Upsilon}{e f_\Upsilon} \right)^2 \left( \frac{q_{\gamma p}}{q_{\Upsilon p}} \right)^2 
+\sigma (\gamma p \to \Upsilon p), 
+\nonumber
 \eea
 with electric charge $e$ given through $\alpha = e^2 / (4 \pi) \simeq 1/137$, and  where $f_\Upsilon$ is the $\Upsilon$ decay constant, which is obtained from the $\Upsilon \to e^+ e^-$ decay as 
 \begin{eqnarray}
 \Gamma_{\Upsilon \to ee} = \frac{4 \pi \alpha^2}{3} \frac{f_\Upsilon^2}{M_\Upsilon}.
 \end{eqnarray}
-The experimental value $\Gamma_{\Upsilon \to ee} =  1.34$~keV yields $f_\Upsilon = 0.238$~GeV. Furthermore, $q_{\gamma p}$ denotes the magnitude of the 
-$\gamma$ three-momentum in the c.m. frame of the $\gamma p \to \Upsilon p$ process:
+The experimental value $\Gamma_{\Upsilon \to ee} =  1.34 \pm 0.02$~keV~\cite{Tanabashi:2018oca} yields $f_\Upsilon = 0.238$~GeV. Furthermore, $q_{\gamma p}$ denotes the magnitude of the 
+photon three-momentum in the c.m. frame of the $\gamma p \to \Upsilon p$ process:
 \bea
 q_{\gamma p} = \frac{(s - M^2)}{2 \sqrt{s}}.
 \eea
 
 The discontinuity across the inelastic cut, ${\rm Disc}_{inel} T_{\Upsilon p}$, 
-is related through the optical theorem to the $\Upsilon \, p \to b \bar b X$ inelastic cross section 
-$\sigma_{\Upsilon p}^{inel}$, which is again related, using VMD, to the corresponding $\gamma p \to b \bar b X$ photoproduction cross section:
+is related through the optical theorem to the $\Upsilon  p \to b \bar b X$ inelastic cross section 
+$\sigma_{\Upsilon p}^{inel}$ as:
 \bea
-{\rm Disc}_{\rm inel} T_{\Upsilon p}(\nu) = 2 \sqrt{s} \, q_{\Upsilon p} \, \sigma_{\Upsilon p}^{inel}    
- = 2 \sqrt{s} \, q_{\Upsilon p} \,  \left( \frac{M_\Upsilon}{e f_\Upsilon} \right)^2  \left( \frac{q_{\gamma p}}{q_{\Upsilon p}} \right)^2 \,  \sigma (\gamma p \to b \bar b X). 
+{\rm Disc}_{\rm inel} T_{\Upsilon p}(\nu) = 2 \sqrt{s} \, q_{\Upsilon p} \, \sigma_{\Upsilon p}^{inel}.    
 \label{eq:sigmainel}
 \eea
+Using VMD, one can relate the total $\gamma p \to b \bar b X$ photoproduction cross section to the inelastic cross sections for the sum over $\Upsilon$ states (labeled by index $i$):
+\begin{eqnarray}
+\sigma (\gamma p \to b \bar b X) = \sum_{\Upsilon_i}
+ \left( \frac{q_{\Upsilon_i p}}{q_{\gamma p}} \right)^2
+ \,  \left( \frac{e f_{\Upsilon_i}}{M_{\Upsilon_i}} \right)^2  \sigma_{\Upsilon_i p}^{inel} \,  . 
+\label{eq:sigmainel2}
+\end{eqnarray}
+In contrast to the elastic process, where the final state is fixed to be the $\Upsilon(1S)$-p state, and for which the elastic photoproduction cross section $\sigma (\gamma p \to \Upsilon p)$ can be expected to be approximately dominated by its lowest term in the sum over vector bottomonia states, the open bottom $b \bar b$ final state in the inelastic photoproduction cross section of Eq.~(\ref{eq:sigmainel2})  can be expected to get sizeable contributions from several vector bottomonia states. We will therefore refrain from approximating Eq.~(\ref{eq:sigmainel2}) by its lowest vector bottomonium contribution in the following analysis, and instead constrain the inelastic discontinuity through the forward differential cross section $d \sigma / dt$ for  $\gamma p \to \Upsilon p$ as discussed in the next section. 
 
-Having fixed the imaginary part of $T_{\Upsilon p}$,  
-the real part of $T_{\Upsilon p}$ is related to its imaginary part
+The real part of the scattering amplitude $T_{\Upsilon p}$ is related to its imaginary part
 through a once-subtracted forward dispersion relation:
 \beq
 \Re T_{\Upsilon p}(\nu) = T_{\Upsilon p}(0) + \frac{2}{\pi} \nu^2 \int_{\nu_{el}}^\infty d
@@ -111,20 +179,20 @@ through a once-subtracted forward dispersion relation:
 \label{eq:disp}
 \eeq
 with $T_{\Upsilon p}(0) $ the subtraction constant at $\nu = 0$. In this work, the subtraction constant will be obtained by performing a fit of the 
-differential $\gamma p \to \Upsilon p$  photoproduction cross section data at $t=0$, which is related to $T_{\Upsilon p}$ as:
+differential $\gamma p \to \Upsilon p$  photo-production cross section data at $t=0$, which is related to $T_{\Upsilon p}$ as:
 \beq
 \frac{d \sigma}{dt} \biggr|_{t = 0} (\gamma p \to \Upsilon p) 
 = \left( \frac{e f_\Upsilon}{M_\Upsilon} \right)^2  \frac{1}{64 \, \pi \, s \, q_{\gamma p}^2} \, \big| T_{\Upsilon p}(\nu) \big|^2.
 \label{eq:dsigmadt0_gapjpsip}
 \eeq
 
-The real part of the forward scattering amplitude at threshold $T_{\Upsilon p}(\nu_{el}) $ is directly related to the $\Upsilon p$ scattering length 
+The real part of the forward scattering amplitude at threshold $T_{\Upsilon p}(\nu_{el}) $ is directly related to the $\Upsilon$-p scattering length 
 $a_{\Upsilon p}$ as:
 \bea
 T_{\Upsilon p}(\nu = \nu_{el}) = 8 \pi (M + M_\Upsilon) \, a_{\Upsilon p}. 
 \eea
-Analogously to the $J/\Psi$ case, 
-we may relate a positive $\Upsilon p$ scattering length, corresponding to an attractive interaction, 
+Analogously to the $J/\psi$ case, 
+we may relate a positive $\Upsilon$-p scattering length, corresponding to an attractive interaction, 
 to an $\Upsilon$ binding energy $B_\Upsilon$ in nuclear matter, using a linear density approximation~\cite{Kaidalov:1992hd}:
 \begin{eqnarray}
 B_\Upsilon \simeq \frac{8 \pi (M + M_\Upsilon) a_{\Upsilon p}}{4 M M_\Upsilon} \, \rho_{nm},
@@ -132,21 +200,74 @@ B_\Upsilon \simeq \frac{8 \pi (M + M_\Upsilon) a_{\Upsilon p}}{4 M M_\Upsilon} \
 \end{eqnarray}
 where $\rho_{nm} \simeq 0.17$~fm$^{-3}$ denotes the nuclear matter density.
 
+As the aim of our work is to extract $a_{\Upsilon p}$ from fitting the subtraction constant $T_{\Upsilon p}(0)$ from future $\Upsilon$ photoproduction data in the threshold region, we will consider three scenarios for the subtraction constant in order to explore the data sensitivity to its extraction. 
+
+The simplest scenario corresponds with having zero value of the subtraction constant, i.e. $T_{\Upsilon p}(0) = 0$. The real part of the $\Upsilon$-p  scattering amplitude is then fully determined by its imaginary part through the dispersion integral 
+in Eq.~(\ref{eq:disp}). The resulting value of the $\Upsilon$-p scattering length is then extremely small, around $a_{\Upsilon p} \sim 10^{-3}$~fm. 
+
+A second scenario is to estimate the subtraction constant by a scaling from its value for the $J/\psi p$ scattering, which was obtained from a fit to data in~\cite{Gryniuk:2016mpk} as $T_{J/\psi p }(0) \simeq 22.5 \pm 2.5$. 
+By observing that at high energies the normalizations of both the $J/\psi p$ and $\Upsilon p$ scattering amplitudes are completely driven by their inelastic discontinuities, as discussed in the following section, and by making the strong assumption that the subtraction constants scale in the same way, yields the estimate: 
+\beq
+T_{\Upsilon p}(0) \approx T_{J/\psi p }(0) \cdot C_{\rm inel}^\Upsilon / C_{\rm inel}^{J/\psi} \approx T_{J/\psi p }(0).
+\eeq
+With the estimate for the cross section normalization 
+at high energies  
+$C_{\rm inel}^\Upsilon / C_{\rm inel}^{J/\psi} \approx 0.9$, which we discuss in the next section, this second scenario yields $T_{\Upsilon p}(0) = 20.5$, which corresponds with a scattering length $a_{\Upsilon p} \simeq 0.016$~fm. 
+
+We also consider a third, theoretically more motivated, scenario, in which an estimate of the $\Upsilon$-p threshold amplitude is obtained by considering, in the leading approximation,  the heavy bottomonium 
+as a Coulombic bound state which interacts with the proton through its chromo-electric polarizability~\cite{Peskin:1979va} yielding:
+\beq
+T_{\Upsilon p}(\nu_{el}) = \frac{16\pi^2}{9} \alpha_\Upsilon M_{\Upsilon} M^2,
+\eeq
+with $\alpha_\Upsilon$ the chromo-electric polarizability.  
+For a Coulombic bound state, $\alpha_\Upsilon$ is given by~\cite{Peskin:1979va,Bhanot:1979vb}
+\beq
+\alpha_\Upsilon = \frac{28}{81} \pi a_0^3,
+\label{eq:elpol}
+\eeq
+where $a_0$ is the Bohr radius of the $\Upsilon$ state, given by
+\beq
+a_0^{-1} = \frac{2}{3}\alpha_s m_b.
+\eeq
+Using the parameter values for the strong coupling $\alpha_s\approx 0.37$ and the bottom quark mass $m_b\approx 4.76$ GeV from a recent potential model calculation for the bottomonium spectrum~\cite{Deng:2016ktl}, the Bohr radius for the $\Upsilon$ state takes on the value
+$a_0^{-1} \simeq (0.85)^{-1} \,\mathrm{GeV}$. 
+This yields from Eq.~(\ref{eq:elpol}) a chromo-electric polarizability $\alpha_\Upsilon \simeq 0.67$~GeV$^{-3}$, which is in good agreement with the recent evaluation given in Ref.~\cite{Brambilla:2015rqa}: 
+$\alpha_\Upsilon = 0.5 \substack{+0.42 \\ -0.38}$~GeV$^{-3}$, using color octet intermediate states in the calculation of the polarizability instead of free ones as in ~\cite{Peskin:1979va,Bhanot:1979vb}. For the purpose of providing cross section estimates in our third scenario we will use as average between both results: $\alpha_\Upsilon \simeq 0.6$~GeV$^{-3}$, 
+which yields the estimate $T_{\Upsilon p}(\nu_{el}) \simeq 88$ or equivalently for the s-wave scattering length $a_{\Upsilon p} \simeq 0.066$~fm. Using the dispersion integral of Eq.~(\ref{eq:disp}) in making the small extrapolation between the amplitudes at $\nu = \nu_{\rm el}$ and $\nu = 0$, this third scenario then yields as value for the subtraction constant: $T_{\Upsilon p}(0) \simeq 87$. 
 
 
-\section{Results and discussion}
 
-In order to empirically determine the $\Upsilon p$ scattering length $a_{\Upsilon p}$, the strategy we use in this work follows our previous analysis for 
-the $J/\psi p$ system~\cite{Gryniuk:2016mpk}. The data on the $\gamma p \to \Upsilon p$ and $\gamma p \to b \bar b X$ total cross sections 
-are parameterized according to the three-parameter forms of Eq.~(\ref{eq:discx}) inserted into Eqs.~(\ref{eq:sigmael}) and (\ref{eq:sigmainel}).
-This determines the total imaginary part in the dispersion integral of Eq.~(\ref{eq:disp}). The real part is then calculated from the dispersion integral  
-and the subtraction constant is extracted from a fit to the differential $\gamma p \to \Upsilon p$ cross section extrapolated to $t = 0$, using Eq.~(\ref{eq:dsigmadt0_gapjpsip}).
+\section{Fit to existing data for $\Upsilon$-photoproduction on the proton}
+
+
+In this section, we discuss the fit of the elastic and inelastic discontinuities, which are parameterized according to the three-parameter forms of Eq.~(\ref{eq:discx}), to available  $\Upsilon$-p photoproduction data, following the same strategy as our previous analysis for 
+the $J/\psi$-p system~\cite{Gryniuk:2016mpk}. 
  
-At present, the exclusive $\Upsilon$ photoproduction database
-consists of four datapoints from HERA~\cite{Adloff:2000vm, Breitweg:1998ki, Chekanov:2009zz}
-(see Fig.~\ref{fig:sigmatot}, left panel).
-For high energies $\sqrt{s} = W\sim100$ GeV, the differential cross section data shows an exponential t-dependence 
-%corresponding to the dependence
+At present, the $\gamma p \to \Upsilon p$ photoproduction database consists of four data points from HERA~\cite{Adloff:2000vm,Breitweg:1998ki,Chekanov:2009zz}, shown in Fig.~\ref{fig:sigmatot} 
+(upper panel). 
+Furthermore at Large Hadron Collider (LHC) energies, the $\gamma p \to \Upsilon p$ cross section has been extracted from central pp production data at LHCb~\cite{Aaij:2015kea} 
+and from ultra-peripheral pPb collisions at  CMS~\cite{Sirunyan:2018sav}.
+
+\begin{figure}
+\includegraphics[width=0.47\textwidth]{si_y.pdf}
+\includegraphics[width=0.47\textwidth]{si_bbX.pdf}
+\caption{Upper panel: W-dependence of the $\gamma p \to \Upsilon p$ total cross section.
+The curve is the result of our global fit with parameters given in Table~\ref{tab:fits}.
+The elastic $\Upsilon$ photo-production data are from HERA: H1~\cite{Adloff:2000vm}
+and ZEUS~\cite{Breitweg:1998ki, Chekanov:2009zz}, and from LHC: LHCb~\cite{Aaij:2015kea} 
+and CMS~\cite{Sirunyan:2018sav}. 
+Lower panel: W-dependence of the 
+total inelastic photoproduction cross section $\gamma p \to b \bar b X$.
+The curve gives a lower limit arising from the contribution of the $\Upsilon(1S)$ state only in the sum of Eq.~(\ref{eq:sigmainel2}) for the $\gamma p \to b \bar b X$ cross section. 
+The open beauty photoproduction data points are from HERA~\cite{Adloff:1999nr} and EMC~\cite{Aubert:1981gx}.}
+\label{fig:sigmatot}
+\end{figure}
+
+The inclusive $b \bar b$ photoproduction database is represented by one data point from HERA~\cite{Adloff:1999nr}.
+Additionally, the lower energy cross section upper limit from EMC~\cite{Aubert:1981gx}
+is added to guide the low-energy behavior, as shown in Fig.~\ref{fig:sigmatot} (lower panel).
+
+For high energies $\sqrt{s} = W\sim100$ GeV, the differential cross section has been measured by the ZEUS Collaboration and follows an exponential t-dependence:
 \beq
 \frac{d \sigma}{dt} (\gamma p \to \Upsilon p)
 \;=\; A \cdot e^{Bt}, \quad \quad 
@@ -162,54 +283,24 @@ A  \simeq B e^{- B t_{\rm min}} \cdot\sigma (\gamma p \to \Upsilon p),
 \eeq
 where
 \beq
-t_\mathrm{min} = M_\Upsilon^2 - 2q_{\gamma p} \left(\sqrt{q_{\Upsilon p}^2 + M_\Upsilon^2} - q_{\Upsilon p}\right)
+t_\mathrm{min} = M_\Upsilon^2 - 2q_{\gamma p} \left(\sqrt{q_{\Upsilon p}^2 + M_\Upsilon^2} - q_{\Upsilon p}\right),
 \eeq
 is the minimum (modulo) physical momentum transfer, corresponding to the forward scattering ($\theta_{\gamma \Upsilon}=0$).
 
-The inclusive $b \bar b$ photoproduction database is represented by one datapoint from HERA~\cite{Adloff:1999nr}.
-Additionally, the lower energy cross section upper limit from EMC~\cite{Aubert:1981gx}
-is added to guide the low-energy behaviour (see Fig.~\ref{fig:sigmatot}, right panel).
+The present database for $\Upsilon$ photoproduction is unfortunately insufficient to perform a good fit using the forms of Eq.~(\ref{eq:discx}) with all parameters unconstrained.
+Especially the lack of low-energy data prevents a direct determination of the low-energy slope parameters $b_x$ of the cross sections at present.
+Assuming a similarity in the energy dependence of the 
+cross sections for charm and bottom photoproduction, 
+we thus start by simply fixing $b_{\rm el}$ and 
+$b_{\rm inel}$ to the values obtained in the $J/\psi$ analysis~\cite{Gryniuk:2016mpk}. 
+The high-energy elastic slope parameter $a_{\rm el}$ and  
+the elastic normalization constant $C_{\rm el}$ 
+are then fitted to the available data points for the elastic $\Upsilon$ photoproduction total cross section, as shown in Fig.~\ref{fig:sigmatot} (upper panel), yielding the parameter values shown in Table~\ref{tab:fits} (second column).  
+%We obtain for the elastic photoproduction total cross section data \input{chisqr.tex}
 
-\begin{figure}
-\includegraphics[width=0.49\textwidth]{si_y.pdf}
-\includegraphics[width=0.49\textwidth]{si_bbX.pdf}
-\caption{W-dependence of the $\gamma p \to \Upsilon p$ (left) and $\gamma p \to b \bar b X$ (right) total cross sections.
-The curve is the result of our global fit with parameters given in Table~\ref{tab:fits}.
-The elastic $\Upsilon$ photoproduction data are from HERA by H1~\cite{Adloff:2000vm}
-and ZEUS~\cite{Breitweg:1998ki, Chekanov:2009zz} Collaborations.
-The simulated EIC datapoints shown are based on the differential in $t$ cross section points:
-the fitted $Ae^{Bt}$ is integrated between $t_\mathrm{min}$ and $t_\mathrm{max}$.
-The error bars of the EIC datapoints are propagated through the resulting covariance matrix of the $A$ and $B$ parameters.
-The open beauty production data points are from HERA~\cite{Adloff:1999nr}, EMC~\cite{Aubert:1981gx}.}
-\label{fig:sigmatot}
-\end{figure}
-
-
-
-The present database is insufficient to perform a high-quality fit using the forms of Eq.~(\ref{eq:discx}) with all the parameters unconstrained.
-We may reasonably expect however, for a diffractive process, that the $a_x$ values are in general similar to those for the $J/\psi$.
-The lack of low-energy data prevents a direct determination of the low-energy slope parameters $b_x$ of the cross sections at present.
-We thus start by simply fixing all the low- and high-energy slope parameters to the $J/\psi$ values from~\cite{Gryniuk:2016mpk}:
-\bea
-a_{\rm el} = 1.38, &\quad& a_{\rm inel} = 1.20, \\
-b_{\rm el} = 1.27, &\quad& b_{\rm inel} = 3.53 .
-\eea
-We then fit the elastic normalization constant $C_{\rm el}$ to the four datapoints of the elastic $\Upsilon$ photoproduction cross section, as shown in Fig.~\ref{fig:sigmatot} (left panel). 
-In order to fit the inelastic normalization constant $C_{\rm inel}$, we make the observation from Fig.~\ref{fig:sigmatot} that around $W = 100$~GeV, the HERA data for the inelastic cross section are around 2 orders of magnitude larger than their elastic counterparts. We can thus safely assume that the amplitude $T_{\Upsilon p}$ entering the differential cross section in Eq.~(\ref{eq:dsigmadt0_gapjpsip}) is dominated by the imaginary part of the inelastic process, proportional to $C_{\rm inel}$. 
-By then relating the cross section ratio of Eq.~(\ref{eq:brel}) to the slope parameter $B$ at $W=100$ GeV, 
-we obtain the relation:
-\beq
-B (W = 100~{\rm GeV}) \simeq  
- \frac{C_{\rm inel}^2}{C_{\rm el}} \left[ \frac{1}{16 \pi W^2} \left( \frac{\nu}{\nu_{\rm inel}} \right)^{2 a_{\rm inel}} 
-\left( \frac{\nu_{\rm el}}{\nu} \right)^{a_{\rm el}} \right]_{W = 100~{\rm GeV} } . 
-\label{eq:Crel}
-\eeq
-Using the emprical slope parameter at $W = 100$~GeV and the fit value of $C_{\rm el}$, allows then to fix the normalization constant $C_{\rm inel}$. 
-The final values of the total cross section parameters are listed in Table~\ref{tab:fits}. 
-We obtain for the elastic photoproduction total cross section data \input{chisqr.tex}
 
 \begin{table}[h]
-\begin{tabular*}{\textwidth}{c @{\extracolsep{\fill}} cccc}
+\begin{tabular*}{\columnwidth}{c @{\extracolsep{\fill}} cccc}
 \hline
 \hline
 & \quad $x$ = el \quad & \quad $x$ = inel \quad\\
@@ -218,171 +309,169 @@ We obtain for the elastic photoproduction total cross section data \input{chisqr
 \hline
 \hline
 \end{tabular*}
-\caption{Fit results for the coefficients entering the elastic discontinuity (second column, $x = el$), 
-and the inelastic discontinuity (third column, $x = inel$).
-The $b_x$ parameters are fixed from $J/\psi$ case result~\cite{Gryniuk:2016mpk}.
-%\textcolor{red}{The errors are based on the covariance matrix.}
-% The given uncertainties for the $a_{\rm el}$ and $C_{\rm el}$ parameters
-% are the {\it uncorrelated} linear estimates based on the four data points of the elastic photoproduction.
-% The uncertainty of $a_{\rm inel}$ is obtained similarly based on the two inelastic photoproduction points.
-The $C_{\rm inel}$ parameter uncertainty is simply estimated as half of the relative uncertainty of $C_{\rm el}$
-based on relation of Eq.~(\ref{eq:Crel}).
+\caption{Fit results for the coefficients entering the elastic discontinuity (second column, $x = {\rm el}$), 
+and the inelastic discontinuity (third column, $x = {\rm inel}$).
+The parameters $b_{\rm el}, b_{\rm inel}$, and 
+$a_{\rm inel}$ are fixed from the $J/\psi$ analysis of Ref.~\cite{Gryniuk:2016mpk}.
+%The $C_{\rm inel}$ parameter uncertainty is simply %estimated as half of the relative uncertainty of $C_{\rm %el}$ based on relation of Eq.~(\ref{eq:brel}).
 }
 \label{tab:fits}
 \end{table}
 
+To determine the inelastic normalization constant $C_{\rm inel}$, it was observed in \cite{Gryniuk:2016mpk} for the $J/\psi$ case that around 
+$W = 100$~GeV the inelastic discontinuity is around two orders of magnitude larger than its elastic counterpart. Although there is only one data point for the inclusive $\gamma p \to b \bar b X$ cross section, shown in the lower panel of  
+Fig.~\ref{fig:sigmatot}, it also confirms this finding for the $\Upsilon$-p discontinuities.   
+The amplitude $T_{\Upsilon p}$ entering the forward differential cross section $A$ in Eq.~(\ref{eq:brel}) is thus dominated by the normalization constant $C_{\rm inel}$. At high energies around $W \sim 100$~GeV, where the subtraction constant makes a negligible contribution to $A$, we can thus solve Eq.~(\ref{eq:brel}) and fit the normalization $C_{\rm inel}$ from the available high-energy data for the $t$-slope parameter $B$. 
 
-Having fixed the imaginary part of the amplitude $T_{\Upsilon p}$, we evaluate the dispersion integral of Eq.~(\ref{eq:disp}). 
-The real part is then calculated from the dispersion relation up to the subtraction constant. 
-Whereas at high energies (i.e. HERA energies) the differential cross section is largely dominated by its imaginary part, we get sizeable sensitivity to 
-the real part at low to intermediate energies. We will explore in the following how to extract the subtraction constant from a fit to the 
- differential $\gamma p \to \Upsilon p$ cross section data at an Electron-Ion Collider at two energy settings, corresponding with the range 
- $W < 30$~GeV and $W < 50$~GeV.    
-
-In order to perform a feasibility study of such forthcoming data, we will consider three scenarios for the subtraction constant in order to 
-explore the data sensitivity to its extraction. 
-The simplest scenario corresponds with having zero value of the subtraction constant. The real part of the $\Upsilon p$ scattering amplitude is then fully determined by its imaginary part through the dispersion integral. The resulting value of the $\Upsilon p$ scattering length is then extremely small, around $a_{\Upsilon p} \simeq 0.6 \times 10^{-3}$~fm. 
-
-A second scenario is to estimate the subtraction constant by a scaling from its value for the $J/\psi p$ scattering, which was obtained from a fit to data in~\cite{Gryniuk:2016mpk} as $T_{J/\psi p }(0) \simeq 22.5 \pm 2.5$. 
-By observing that at high energies the normalizations of both the $J/\psi p$ and $\Upsilon p$ scattering amplitudes are completely driven by their inelastic discontinuities, and by making the strong assumption that the subtraction constants scale in the same way, %we obtain the estimate:
-we thus estimate them to be roughly the same:
-\beq
-T_{\Upsilon p}(0) = T_{J/\psi p }(0) \cdot C_{\rm inel}^\Upsilon / C_{\rm inel}^{J/\psi} \approx T_{J/\psi p }(0).
-\eeq
-% which corresponds with a scattering length $a_{\Upsilon p} \simeq 0.016$~fm. 
-
-We also consider a third, theoretically more motivated, scenario, in which an estimate of the threshold scattering amplitude 
-is obtained by considering, in the leading approximation,  the heavy bottomonium 
-as a Coulombic bound state~\cite{Peskin:1979va, Kaidalov:1992hd}:
-\beq
-T_{\Upsilon p}(\nu_{el}) = \frac{64\pi^3}{3^6}7 M_{\Upsilon} M_p^2 a_0^3 ,
-\eeq
-where we use the Bohr radius $a_0$ of the $\Upsilon$
-\beq
-a_0^{-1} \approx \frac{4}{3}\alpha_s \frac{m_b}{2} \approx (0.85)^{-1} \,\mathrm{GeV},
-\eeq
-with the values of the strong coupling $\alpha_s\approx 0.37$ and the bottom quark mass $m_b\approx 4.76$ GeV
- at the corresponding scale.
-This estimate yields $T_{\Upsilon p}(\nu_{el}) \simeq 98$ or equivalently for the s-wave scattering length $a_{\Upsilon p} \simeq 0.07$~fm. Using the dispersion integral of Eq.~(\ref{eq:disp}) to relate the amplitudes at $\nu = \nu_{\rm el}$ and $\nu = 0$, we then obtain 
-$T_{\Upsilon p}(0) \simeq 97$. 
-
-In Table~\ref{tab:scattlength}, we show the values for the s-wave scattering length $a_{\Upsilon p}$ and nuclear matter binding energy $B_\Upsilon$ 
-corresponding with the values of $T_{\Upsilon p}(0)$ in the three scenarios discussed above. The uncertainties correspond with the simulated EIC 
-$\gamma p \to \Upsilon p$ data for two beam settings as discussed below. 
-In Fig.~\ref{fig:psip_psip}, we show the $W$-dependence of the real and imaginary parts of the $\Upsilon p$ scattering amplitude $T_{\Upsilon p}$ in our dispersive formalism, for the three choices of the subtraction constant discussed above.
-  
-
-\begin{table}[h]
-\begin{tabular*}{\textwidth}{c @{\extracolsep{\fill}} cccc}
-\hline
-\hline
-\quad beam setting \quad & \quad $T_{\Upsilon p}(0)$ \quad &  \quad $T_{\Upsilon p}(\nu = \nu_{el})$
- \quad & \quad $a_{\Upsilon p}$ (in fm) \quad  & \quad $B_{\Upsilon}$ (in MeV) \quad \\ 
-\hline
-1 \input{table2_eic1.tex}
-\hline
-2 \input{table2_eic2.tex}
-% \quad  $0$ \quad & $1.30$ & \quad  $0.003$ \quad & \quad  $0.2$ \quad  \\
-% \quad  $22.45 \pm 2.45$ \quad & $23.74 \pm 2.59$ & \quad $0.046 \pm 0.005$ \quad & \quad  $2.7 \pm 0.3$ \quad \\ 
-% \quad  $45$ \quad & $46.30$ & \quad $0.090$ \quad & \quad  $5.2$ \quad  \\ 
-\hline
-\hline
-\end{tabular*}
-\caption{Values of 
-the subtraction term $T_{\Upsilon p}(0)$ (first column), 
-the corresponding values of the threshold amplitude $T_{\Upsilon p}(\nu_{\rm el})$ (second column), 
-the corresponding $\Upsilon p$ s-wave scattering lengths $a_{\Upsilon p}$ (third column), 
-and the corresponding $\Upsilon$-nuclear matter binding energy $B_\Upsilon$, according to Eq.~(\ref{eq:nmbe}) (fourth column).
-The uncertainty estimates are propagated based on the generated EIC differential cross section datapoints.
-}
-\label{tab:scattlength}
-\end{table}
+ 
 
 \begin{figure}[h]
-\includegraphics[width=0.49\textwidth]{t_y.pdf}
-\includegraphics[width=0.49\textwidth]{reimt_y.pdf}
-\caption{Left panel:
-Imaginary part (dotted curve) and real part of the forward scattering amplitude $T_{\Upsilon p}$ as function of W.
-The real part is shown for different values of the subtraction constant as indicated on the figure.
-Rigth panel: corresponding ratios of real over imaginary parts plotted starting from inelastic threshold.}
-\label{fig:psip_psip}
-\end{figure}
-
-
-
-We will next simulate $\gamma p \to \Upsilon p$ data in kinematics accessible at a future EIC according to the cross section estimates obtained above, by using the three scenarios for the value of the s-wave scattering length $a_{\Upsilon p}$. 
-
-
-For the simulations, we consider two beam energies of a future EIC, which are labeled by setting 1 (setting 2), which 
-correspond with a collider c.m. energy of 30 GeV (50 GeV) respectively. {\color{red} (CHECK THESE NUMBERS)} 
-
-{\color{red} DISCUSS EIC LUMINOSITY HERE...this would correspond with a one-year running at a luminosity 
-${\cal L} = 10^{35}$~cm$^{-2} s^{-1}$ ???   }
-
-For the differential cross section we assume an exponential $t$-dependence according to Eq.~(\ref{eq:bdef}) and normalize its 
-value at $t = 0$, given by $A$, to our theoretical estimate for the three choices of the subtraction constant 
-$T_{\Upsilon p} (0)$ discussed above. We adjust the $t$-slope $B$ such that it returns the theoretical $\gamma p \to \Upsilon p$ 
-total cross section upon integration.  
-{\color{red} (CHECK THAT THIS IS WHAT IS DONE IN THE SIMULATION, especially when $-t_{min} \neq 0$)}
-
-In Fig.~\ref{fig:dsigmadt}, we show the simulated results for the $t$-dependence of the $\gamma p \to \Upsilon p$ 
-differential cross sections for different values of $W$,  
-corresponding with the two EIC beam settings considered.
-
-
-\begin{figure}[h]
-\includegraphics[width=0.49\textwidth]{{dsdt_y_eic1_W_12.5}.pdf}
-\includegraphics[width=0.49\textwidth]{{dsdt_y_eic2_W_12.5}.pdf}
-\includegraphics[width=0.49\textwidth]{{dsdt_y_eic1_W_21.5}.pdf}
-\includegraphics[width=0.49\textwidth]{{dsdt_y_eic2_W_21.5}.pdf}
-\includegraphics[width=0.49\textwidth]{{dsdt_y_eic1_W_35.5}.pdf}
-\includegraphics[width=0.49\textwidth]{{dsdt_y_eic2_W_35.5}.pdf}
-\caption{$t$-dependence of the $\gamma p \to \Upsilon p$ differential cross section 
-for different values of the subtraction constant $T_0 \equiv T_{\Upsilon p} (0)$ as indicated on the figure.
-The datapoints are simulated based on the theoretical elastic $\Upsilon$ photoproduction cross section, assuming an exponential 
-$t$-dependence. The bands represent the uncertainty propagated based on the EIC generated datapoints, 
-% assuming one-parameter fit of $T_{\Upsilon p}(0)$.
-assuming the two-parameter exponential fits.
-Only points generated up to $2.5$ GeV are considered in the fits.}
-\label{fig:dsigmadt}
-\end{figure}
-
-
-\begin{figure}
-%\includegraphics[width=0.49\textwidth]{dsdt_y.pdf}
-%\includegraphics[width=0.49\textwidth]{dsdt_y_close.pdf}
-\includegraphics[width=0.49\textwidth]{dsdt_y_eic1.pdf}
-\includegraphics[width=0.49\textwidth]{dsdt_y_close_eic1.pdf}
-\includegraphics[width=0.49\textwidth]{dsdt_y_eic2.pdf}
-\includegraphics[width=0.49\textwidth]{dsdt_y_close_eic2.pdf}
-\caption{W-dependence of the $\gamma p \to \Upsilon p$ differential cross section, extrapolated to the forward direction ($t=0$), 
-for different values of the subtraction constant $T_0 \equiv T_{\Upsilon p} (0)$ in the forward $\Upsilon p$ scattering amplitude.
-The (black circles) datapoints are obtained from the elastic $\Upsilon$ photoproduction cross section from HERA by using the empirically 
-measured slope parameter, using Eq.~(\ref{eq:brel}).
-The bands represent the uncertainty propagated based on the EIC generated datapoints,
-assuming one-parameter fit of $T_{\Upsilon p}(0)$.}
-\label{fig:dsigmadt0}
-\end{figure}
-
-
-\begin{figure}
-% \includegraphics[width=0.49\textwidth]{b_slope.pdf}
-\includegraphics[width=0.49\textwidth]{b_slope_eic1.pdf}
-\includegraphics[width=0.49\textwidth]{b_slope_eic2.pdf}
-\includegraphics[width=0.49\textwidth]{b_slope_jpsi.pdf}
+\includegraphics[width=0.47\textwidth]{b_slope_jpsi.pdf}
+\includegraphics[width=0.47\textwidth]{b_slope_eic1.pdf}
 \caption{
-% W-dependence of the left hand side of relation of Eq.~\ref{eq:Crel},
-The W-dependence of the B slope parameter introduced in relation (\ref{eq:bdef}),
-for different values of the subtraction constant $T_{\Upsilon p} (0)$ in the forward $\Upsilon p$ (top)
-and the forward J/$\psi p $ (bottom) scattering amplitudes.
-The value at $W=100$ GeV for the $\Upsilon$ case is $B=4.5\pm0.5$~GeV$^{-2}$~\cite{Chekanov:2009zz}.
-The curves shown are obtained by solving Eq.~(\ref{eq:brel}) for $B$.
-The $B$ slope data points shown for the J/$\psi$ production are from HERA~\cite{Chekanov:2002xi}.
+The W-dependence of the exponential $t$-slope parameter $B$ in $d \sigma / dt$ of Eq.~(\ref{eq:bdef}). The curves are obtained by solving 
+Eq.~(\ref{eq:brel}) within the dispersive framework  for different values of the subtraction constant $T_0$ in the $J/\psi p $ (upper)  and $\Upsilon p$ (lower) forward scattering amplitudes.
+The $t$-slope data points are from HERA: for $J/\psi$ production from Ref.~\cite{Chekanov:2002xi}, and 
+for $\Upsilon$ production from Ref.~\cite{Chekanov:2009zz}.
 }
 \label{fig:bslope}
 \end{figure}
 
+We show this fitting procedure to the $t$-slope parameter $B$ in Fig.~\ref{fig:bslope}, and illustrate it first for the $J/\psi$ case (upper panel). In solving Eq.~(\ref{eq:brel}) for $B$, 
+we use the total cross section data for 
+$\sigma(\gamma p \to J/\psi p)$ which fixes the elastic discontinuity. Furthermore, on the left hand side of Eq.~(\ref{eq:brel}), we need the real and imaginary parts of the forward scattering amplitude to determine $A$, according to Eq.~(\ref{eq:dsigmadt0_gapjpsip}). 
+For the imaginary part of the amplitude, which is described by its elastic and inelastic discontinuities, we use $C_{\rm inel}$ and $a_{\rm inel}$ as fit parameters.   
+The real part of the amplitude is calculated from the dispersion relation of Eq.~(\ref{eq:disp}) for three values of the subtraction constant $T_0 \equiv T_{\psi p}(0)$, considered in Ref.~\cite{Gryniuk:2016mpk}. The solution of Eq.~(\ref{eq:brel}) for these three values of $T_0$ is shown in Fig.~\ref{fig:bslope} and compared with the HERA data for the $t$-slope. One firstly sees from Fig.~\ref{fig:bslope} that for $W \geq 50$~GeV, the sensitivity to the subtraction constant becomes vanishingly small, thus allowing to determine $a_{\rm inel}$ and $C_{\rm inel}$ from a fit to the HERA data as: $a_{\rm inel} = 1.20$ and 
+$C_{\rm inel} = 20.5$. 
+
+
+We apply the same procedure to the $\Upsilon$ $t$-slope parameter in the lower panel of Fig.~\ref{fig:bslope}, and  show our results for the three scenarios for the subtraction constant $T_0 \equiv T_{\Upsilon p}(0)$ discussed above. We again observe that for $W \geq 100$~GeV, the sensitivity to the subtraction constant becomes vanishingly small. 
+As there is only one data point at $W = 100$~GeV in this case, we fix $a_{\rm inel}$ as in the $J/\psi$ case and fit $C_{\rm inel}$ to the data point at 100 GeV. The obtained value for $C_{\rm inel}$ is listed in Table~\ref{tab:fits}. It is seen that the value of the thus extracted dimensionless parameter $C_{\rm inel}$ is similar within 10 \% between the $J/\psi$ and $\Upsilon$ cases. We also note that in the sum of Eq.~(\ref{eq:sigmainel2}) the $\Upsilon$ contribution  to the inelastic open beauty photoproduction cross section is around 20~\%. 
+
+\begin{figure}
+\includegraphics[width=0.47\textwidth]{t_y.pdf}
+%\includegraphics[width=0.47\textwidth]{reimt_y.pdf}
+\caption{
+Imaginary part (dotted curve) and real part of the forward scattering amplitude $T_{\Upsilon p}$ as function of $W$.
+The real part is shown for different values of the subtraction constant as indicated on the figure.
+}
+\label{fig:psip_psip}
+\end{figure}
+
+
+In Fig.~\ref{fig:psip_psip}, we show the $W$-dependence of real and imaginary parts of the scattering amplitude $T_{\Upsilon p}$ in our dispersive formalism, for the three choices of the subtraction constant discussed above. We notice that the real part of the amplitude dominates in the threshold region, whereas the imaginary part dominates at high energies as expected for a diffractive process. For the largest value of the subtraction constant $T_0 = 87$ considered, the imaginary part overtakes the real part around $W \approx 25$~GeV.  
+
+
+
+
+\section{Results for $\Upsilon$ photoproduction at the EIC and discussion}
+
+We investigate in this section how to extract the subtraction constant from a fit to the 
+ differential $\gamma p \to \Upsilon p$ cross section data at an Electron-Ion Collider (EIC). 
+ 
+We consider both a medium-energy and high-energy EIC configuration. 
+The medium-energy configuration (setting 1) has a 10~GeV electron beam incident on a 100~GeV proton beam 
+($\sqrt{s_{ep}} = 63$~GeV), while the high-energy configuration (setting 2) has a 18~GeV electron beam incident 
+on a 275~GeV proton beam ($\sqrt{s_{ep}} = 140$~GeV), 
+corresponding to nominal configurations for the EIC design.
+
+For the $\gamma p \to \Upsilon p$ cross section, we use the dispersive model discussed above with $t$-dependence as in Eq.~(\ref{eq:bdef}). We show results for the three scenarios discussed above for the subtraction constant $T_{\Upsilon p}(0)$, and corresponding s-wave scattering length $a_{\Upsilon p}$, as shown in Table~\ref{tab:scattlength}. 
+The uncertainties correspond to the simulated EIC 
+$\gamma p \to \Upsilon p$ data for the two beam settings. 
+ 
+ 
+\begin{table}[h]
+\begin{tabular*}{\columnwidth}{c @{\extracolsep{\fill}} ccc}
+\hline
+\hline
+\quad setting \quad & \quad $T_{\Upsilon p}(0) \quad &  
+ \quad $a_{\Upsilon p}$ (in fm) \quad  & \quad $B_{\Upsilon}$ (in MeV) \quad \\ 
+\hline
+1 \input{table2_eic1.tex}
+\hline
+2 \input{table2_eic2.tex}
+\hline
+\hline
+\end{tabular*}
+\caption{Values of 
+the subtraction constant 
+$T_{\Upsilon p}(0)$ (first column), 
+the corresponding $\Upsilon$-p s-wave scattering length $a_{\Upsilon p}$ (second column), 
+and the corresponding $\Upsilon$-nuclear matter binding energy $B_\Upsilon$, according to Eq.~(\ref{eq:nmbe}) (third column).
+The uncertainty estimates are propagated based on the generated EIC differential cross section data points.
+}
+\label{tab:scattlength}
+\end{table}
+
+We use the Argonne l/A-event generator~\cite{git:lager} to simulate a realistic event sample for the $\gamma p \to \Upsilon p$ process at the EIC, and refer to Appendix~\ref{apx-evgen} for more details on the exact implementation of the simulation. 
+For our simulations, we assumed a total integrated luminosity of 100~fb$^{-1}$ for each of the settings, which corresponds to 116 days at 10$^{34}$cm$^{-2}$s$^{-1}$.
+We simulated both the $\Upsilon \to e^+e^-$ and $\Upsilon \to \mu^+\mu^-$ decay channels, and only considered events where we fully detect the exclusive final state.
+We assumed nominal EIC detector parameters in line with the EIC  white paper, where we have lepton detection for pseudo-rapidities between $-5 < \eta_l < 5$, and recoil proton detection for angles $\theta_p > 2$~mrad. 
+Furthermore, we assumed we can reconstruct the scattered electron for 
+$y = P.q/P.k$ between $0.01 < y < 0.8$, and we ensured a 
+quasi-real regime by requiring that $Q^2 < 1$~GeV$^{2}$.
+
+
+
+\begin{figure*}
+\includegraphics[width=0.47\textwidth]{{dsdt_y_eic1_W_12.5}.pdf}
+\includegraphics[width=0.47\textwidth]{{dsdt_y_eic2_W_12.5}.pdf} \\
+\includegraphics[width=0.47\textwidth]{{dsdt_y_eic1_W_21.5}.pdf}
+\includegraphics[width=0.47\textwidth]{{dsdt_y_eic2_W_21.5}.pdf}
+\\
+\includegraphics[width=0.47\textwidth]{{dsdt_y_eic1_W_35.5}.pdf}
+\includegraphics[width=0.47\textwidth]{{dsdt_y_eic2_W_35.5}.pdf}
+\caption{$t$-dependence of the $\gamma p \to \Upsilon p$ differential cross section 
+for different values of the subtraction constant $T_0 \equiv T_{\Upsilon p} (0)$ as indicated on the figure.
+The data points are simulated based on the theoretical elastic $\Upsilon$ photoproduction cross section, assuming an exponential 
+$t$-dependence. The bands represent the uncertainty propagated based on the EIC generated data points, 
+assuming the two-parameter exponential fits.
+}
+\label{fig:dsigmadt}
+\end{figure*}
+
+
+\begin{figure*}
+\includegraphics[width=0.47\textwidth]{dsdt_y_eic1.pdf}
+\includegraphics[width=0.47\textwidth]{dsdt_y_close_eic1.pdf} \\
+\includegraphics[width=0.47\textwidth]{dsdt_y_eic2.pdf}
+\includegraphics[width=0.47\textwidth]{dsdt_y_close_eic2.pdf}
+\caption{W-dependence of the $\gamma p \to \Upsilon p$ differential cross section, extrapolated to $t=0$, 
+for different values of the subtraction constant $T_0 \equiv T_{\Upsilon p} (0)$. The (black circles) data points are obtained from the elastic $\Upsilon$ photoproduction cross section from HERA by using the empirically measured slope parameter, using Eq.~(\ref{eq:brel}). The bands represent the uncertainty propagated based on the EIC generated data points, assuming a one-parameter fit of $T_0$. Upper (lower) panels are for EIC beam setting 1 (beam setting 2) respectively. Right panels give a more detailed view of the lower energy region $W < 25$~GeV.}
+\label{fig:dsigmadt0}
+\end{figure*}
+
+In Fig.~\ref{fig:dsigmadt}, we show the simulated results for the $t$-dependence of the $\gamma p \to \Upsilon p$ 
+differential cross sections for different values of $W$,  
+corresponding to the two EIC beam settings. In each case we consider the three scenarios for the subtraction constant $T_0$ discussed above. 
+The error bands represent the uncertainty propagated based on the EIC generated data points, assuming the two-parameter exponential fits of Eq.~(\ref{eq:bdef}). 
+Only points generated up to $-t$ values of $2.5$ GeV are considered in the fits.
+
+
+\begin{figure}[h]
+\includegraphics[width=0.47\textwidth]{b_slope_eic1.pdf}
+\includegraphics[width=0.47\textwidth]{b_slope_eic2.pdf}
+\caption{
+The W-dependence of the $t$-slope parameter $B$ for $\gamma p \to \Upsilon p$ obtained by solving Eq.~(\ref{eq:brel}),
+for different values of the subtraction constant $T_0$ in the forward $\Upsilon$-p scattering amplitude.
+The HERA data point at $W=100$ GeV is from Ref.~\cite{Chekanov:2009zz}. 
+The simulated EIC data points shown are based on the differential in $t$ cross section points. 
+The error bars of the EIC data points are propagated through the resulting covariance matrix of the $A$ and $B$ parameters.
+Upper (lower) panel is for EIC beam setting 1 (beam setting 2) respectively.}
+\label{fig:bslopeeic}
+\end{figure}
+
+In Fig.~\ref{fig:dsigmadt0}, we show the W-dependence of the $\gamma p \to \Upsilon p$ differential cross sections extrapolated to t = 0 for the two EIC beam settings considered.  
+We see that in the $W < 25$~GeV region, the precision that can be reached at the EIC will allow to clearly distinguish between the three scenarios for the subtraction constant, and allow to extract this parameter with a precision better than 10 \%. For the region $W > 25$~GeV, beam setting 2 will furthermore allow to also test the slope of the energy dependence of the $\gamma p \to \Upsilon p$ forward differential cross section, and thus allow to perform an independent fit of the $a_{\rm inel}$ parameter, which appears in the parameterization of the imaginary part of the forward $\Upsilon$-p scattering amplitude of Eq.~(\ref{eq:discx}). 
+
+The sensitivity to the subtraction constants in the 
+projected $\gamma p \to \Upsilon p$ differential cross section data at an EIC is also illustrated in Fig.~\ref{fig:bslopeeic}, where we show the $t$-slope $B$ through solution of Eq.~(\ref{eq:brel}).  
+Beam setting 1 has the higher precision to extract the subtraction constant, whereas beam setting 2 will allow to connect the data with the existing HERA measurement. 
+
 \section{Conclusion}
+
+\newpage
+
 
 \section*{Acknowledgements}
 The work of OG and MV was supported by the Deutsche Forschungsgemeinschaft (DFG, German Research Foundation),
@@ -390,12 +479,251 @@ in part through the Collaborative Research Center [The Low-Energy Frontier of th
 Model, Projektnummer 204404729 - SFB 1044], and in part through the Cluster of Excellence
 [Precision Physics, Fundamental Interactions, and Structure of Matter] (PRISMA$^+$ EXC
 2118/1) within the German Excellence Strategy (Project ID 39083149).
+This work is supported in part by the US DOE contract DE-AC02-06CH11357.
 
+
+
+\appendix
+
+\section{Event Generation\label{apx-evgen}}
+In order to simulate a realistic event sample for $\Upsilon$ events at the EIC,
+we added the formalism of this paper to the Argonne l/A-event Generator (\textsc{lager}) \cite{git:lager}
+\textsc{Lager} is a modular accept-reject generator capable of simulating both fixed-target and collider kinematics. Below we describe the model components used to obtain the event samples for this work.
+
+\subsection{Differential electro-production cross section}
+
+The differential cross section for the process ($e p \to e^\prime \gamma^* p \to e^\prime \Upsilon p$) can be written as,
+\beq
+\frac{d\sigma}{dQ^2dydt}(e p \to e^\prime \Upsilon p) = 
+\Gamma_T(1+\epsilon R)
+\frac{d\sigma}{dt}(\gamma^* p \to \Upsilon p),
+\eeq
+with transverse virtual photon flux $\Gamma_T$, virtual photon polarization $\epsilon$, and 
+$R\equiv\sigma_L/\sigma_T$ parameterized as in Ref.~\cite{Martynov:2002ez},
+\beq
+R(Q^2) = \left(\frac{A M_\Upsilon^2 + Q^2}{A M_\Upsilon^2}\right)^{n_1} - 1.
+\eeq
+We use the values for parameters ($A$, $n_1$) as determined for $J/\psi$ production in Ref.~\cite{Fiore:2009xk}.
+In order to estimate the unknown $Q^2$ dependence of the differential $\gamma^* p \to \Upsilon p$ cross section, we use the following factorized ansatz,
+\beq
+\frac{d\sigma}{dt}(\gamma^* p \to \Upsilon p) = D(Q^2) \frac{d\sigma}{dt}(\gamma p \to \Upsilon p),
+\eeq
+where for $D$ we assumed a dipole-like form-factor, similar to what is typically
+done in a vector meson dominance model (VMD),
+\beq
+D(Q^2) = \left(\frac{M_\Upsilon^2}{M_\Upsilon^2 + Q^2}\right)^{n_2}.
+\eeq
+This formula deviates from its standard VMD form through the value for $n_2$, which was
+tuned to optimally describe the $Q^2$ dependence for exclusive $\rho$ production in a wide range
+of kinematic regions.
+Note that this assumption has very little impact on the projections in this work, as we only consider quasi-real events.
+
+\subsection{Differential cross section for $\Upsilon$ photoproduction}
+
+In order to determine the slope $B$ of the $t$-dependence of the differential cross section for 
+the $\gamma p \to \Upsilon p$ process, we numerically solve the transcendental equation \eqref{eq:brel}.
+Note that both  normalization $A$ and slope $B$ depend on the choice of the subtraction
+constant $T_{\Upsilon p} (0)$, while the total integrated cross section 
+$\sigma(\gamma p \to \Upsilon p)$ is independent of the subtraction constant.
+
+\subsection{Angular dependence of the decay leptons}
+
+We included both the $\Upsilon \to e^+e^-$ and $\Upsilon \to \mu^+\mu^-$ decay channels
+in our simulation, using $s$-channel helicity conservation (SCHC) to describe the
+angular distribution for a vector meson decaying into two fermions~\cite{Breitweg:1998nh,Chekanov:2002xi,Schilling:1973ag}:
+\beq
+\mathcal{W}(\cos\theta_\text{CM}) = 
+\frac{3}{8}(1+r^{04}_{00}+(1-3r_{00}^{04})\cos^2\theta_\text{CM}),
+\eeq
+where we relate the spin-density matrix element $r^{04}_{00}$ to $R$ as,
+\beq
+R = \frac{1}{\epsilon}\frac{r^{04}_{00}}{1-r^{04}_{00}}.
+\eeq
 
 
 \begin{thebibliography}{99}
 
-%\cite{Gryniuk:2016mpk}
+\bibitem{Kharzeev:1995ij} 
+  D.~Kharzeev,
+  %``Quarkonium interactions in QCD,''
+  Proc.\ Int.\ Sch.\ Phys.\ Fermi {\bf 130}, 105 (1996).
+%  doi:10.3254/978-1-61499-215-8-105
+ % [nucl-th/9601029].
+  %%CITATION = doi:10.3254/978-1-61499-215-8-105;%%
+
+\bibitem{Voloshin:2007dx} 
+  M.~B.~Voloshin,
+  %``Charmonium,''
+  Prog.\ Part.\ Nucl.\ Phys.\  {\bf 61}, 455 (2008).
+ % doi:10.1016/j.ppnp.2008.02.001
+ % [arXiv:0711.4556 [hep-ph]].
+  %%CITATION = doi:10.1016/j.ppnp.2008.02.001;%%
+  
+\bibitem{Hosaka:2016ypm} 
+  A.~Hosaka, T.~Hyodo, K.~Sudoh, Y.~Yamaguchi and S.~Yasui,
+  %``Heavy Hadrons in Nuclear Matter,''
+  arXiv:1606.08685 [hep-ph].
+  %%CITATION = ARXIV:1606.08685;%%
+
+\bibitem{Brodsky:1989jd} 
+  S.~J.~Brodsky, I.~A.~Schmidt and G.~F.~de Teramond,
+  %``Nuclear Bound Quarkonium,''
+  Phys.\ Rev.\ Lett.\  {\bf 64}, 1011 (1990).
+%  doi:10.1103/PhysRevLett.64.1011
+  %%CITATION = doi:10.1103/PhysRevLett.64.1011;%%
+  
+\bibitem{Wasson:1991fb} 
+  D.~A.~Wasson,
+  %``Comment on `Nuclear bound quarkonium.',''
+  Phys.\ Rev.\ Lett.\  {\bf 67}, 2237 (1991).
+%  doi:10.1103/PhysRevLett.67.2237
+  %%CITATION = doi:10.1103/PhysRevLett.67.2237;%%  
+  
+\bibitem{Luke:1992tm} 
+  M.~E.~Luke, A.~V.~Manohar and M.~J.~Savage,
+  %``A QCD Calculation of the interaction of quarkonium with nuclei,''
+  Phys.\ Lett.\ B {\bf 288}, 355 (1992). 
+%  doi:10.1016/0370-2693(92)91114-O
+%  [hep-ph/9204219].
+  %%CITATION = doi:10.1016/0370-2693(92)91114-O;%%  
+
+\bibitem{Peskin:1979va} 
+  M.~E.~Peskin,
+  %``Short Distance Analysis for Heavy Quark Systems. 1. Diagrammatics,''
+  Nucl.\ Phys.\ B {\bf 156}, 365 (1979).
+ % doi:10.1016/0550-3213(79)90199-8
+  %%CITATION = doi:10.1016/0550-3213(79)90199-8;%%
+
+\bibitem{Bhanot:1979vb}
+G.~Bhanot and M.~E.~Peskin,
+%``Short Distance Analysis for Heavy Quark Systems. 2. Applications,''
+Nucl. Phys. B \textbf{156}, 391-416 (1979).
+%doi:10.1016/0550-3213(79)90200-1
+
+
+
+\bibitem{Brodsky:1997gh} 
+  S.~J.~Brodsky and G.~A.~Miller,
+  %``Is J / psi - nucleon scattering dominated by the gluonic van der Waals interaction?,''
+  Phys.\ Lett.\ B {\bf 412}, 125 (1997).
+%  doi:10.1016/S0370-2693(97)01045-9
+ % [hep-ph/9707382].
+  %%CITATION = doi:10.1016/S0370-2693(97)01045-9;%%
+
+  
+\bibitem{Ko:2000jx} 
+  S.~H.~Lee and C.~M.~Ko,
+  %``Charmonium in nuclear matter,''
+  Phys.\ Rev.\ C {\bf 67}, 038202 (2003). 
+ % doi:10.1103/PhysRevC.67.038202
+  %[nucl-th/0208003].
+  %%CITATION = doi:10.1103/PhysRevC.67.038202;%%
+  
+\bibitem{Tsushima:2011kh} 
+  K.~Tsushima, D.~H.~Lu, G.~Krein and A.~W.~Thomas,
+  %``$J/\Psi$-nuclear bound states,''
+  Phys.\ Rev.\ C {\bf 83}, 065208 (2011). 
+ % doi:10.1103/PhysRevC.83.065208
+  %[arXiv:1103.5516 [nucl-th]].
+  %%CITATION = doi:10.1103/PhysRevC.83.065208;%%
+
+  
+\bibitem{Yokota:2013sfa} 
+  A.~Yokota, E.~Hiyama and M.~Oka,
+  %``Possible existence of charmoniumÐnucleus bound states,''
+  PTEP {\bf 2013}, no. 11, 113D01 (2013).
+  %doi:10.1093/ptep/ptt087
+  %[arXiv:1308.6102 [nucl-th]].
+  %%CITATION = doi:10.1093/ptep/ptt087;%%
+
+\bibitem{Beane:2014sda} 
+  S.~R.~Beane, E.~Chang, S.~D.~Cohen, W.~Detmold, H.-W.~Lin, K.~Orginos, A.~Parreo and M.~J.~Savage,
+  %``Quarkonium-Nucleus Bound States from Lattice QCD,''
+  Phys.\ Rev.\ D {\bf 91}, no. 11, 114503 (2015). 
+  %doi:10.1103/PhysRevD.91.114503
+  %[arXiv:1410.7069 [hep-lat]].
+  %%CITATION = doi:10.1103/PhysRevD.91.114503;%%
+  
+
+\bibitem{Olsen:2017bmm}
+S.~L.~Olsen, T.~Skwarnicki and D.~Zieminska,
+%``Nonstandard heavy mesons and baryons: Experimental evidence,''
+Rev. Mod. Phys. \textbf{90}, no.1, 015003 (2018)
+%doi:10.1103/RevModPhys.90.015003
+%[arXiv:1708.04012 [hep-ph]].
+
+
+\bibitem{Dubynskiy:2008mq}
+S.~Dubynskiy and M.~Voloshin,
+%``Hadro-Charmonium,''
+Phys. Lett. B \textbf{666}, 344-346 (2008). 
+%doi:10.1016/j.physletb.2008.07.086
+%[arXiv:0803.2224 [hep-ph]].
+
+
+\bibitem{Aaij:2015tga}
+R.~Aaij \textit{et al.} [LHCb],
+%``Observation of $J/\psi p$ Resonances Consistent with Pentaquark States in $\Lambda_b^0 \to J/\psi K^- p$ Decays,''
+Phys. Rev. Lett. \textbf{115}, 072001 (2015). 
+%doi:10.1103/PhysRevLett.115.072001
+%[arXiv:1507.03414 [hep-ex]].
+
+
+\bibitem{Aaij:2019vzc}
+R.~Aaij \textit{et al.} [LHCb],
+%``Observation of a narrow pentaquark state, $P_c(4312)^+$, and of two-peak structure of the $P_c(4450)^+$,''
+Phys. Rev. Lett. \textbf{122}, no.22, 222001 (2019). 
+%doi:10.1103/PhysRevLett.122.222001
+%[arXiv:1904.03947 [hep-ex]].
+
+
+\bibitem{Roca:2015dva}
+L.~Roca, J.~Nieves and E.~Oset,
+%``LHCb pentaquark as a $\bar{D}^*\Sigma_c-\bar{D}^*\Sigma_c^*$ molecular state,''
+Phys. Rev. D \textbf{92}, no.9, 094003 (2015). 
+%doi:10.1103/PhysRevD.92.094003
+%[arXiv:1507.04249 [hep-ph]].
+
+
+\bibitem{Eides:2015dtr}
+M.~I.~Eides, V.~Y.~Petrov and M.~V.~Polyakov,
+%``Narrow Nucleon-$\psi(2S)$ Bound State and LHCb Pentaquarks,''
+Phys. Rev. D \textbf{93}, no.5, 054039 (2016)
+%doi:10.1103/PhysRevD.93.054039
+%[arXiv:1512.00426 [hep-ph]].
+
+
+\bibitem{Eides:2019tgv}
+M.~I.~Eides, V.~Y.~Petrov and M.~V.~Polyakov,
+%``New LHCb pentaquarks as hadrocharmonium states,''
+[arXiv:1904.11616 [hep-ph]].
+
+
+\bibitem{Sugiura:2019pye}
+T.~Sugiura, Y.~Ikeda and N.~Ishii,
+%``Charmonium-nucleon interactions from $2+1$ flavor lattice QCD,''
+PoS \textbf{LATTICE2018}, 093 (2019). 
+%doi:10.22323/1.334.0093
+%[arXiv:1905.02336 [nucl-th]].
+
+%\bibitem{Polyakov:2018aey}
+%M.~V.~Polyakov and P.~Schweitzer,
+%``Determination of $J/\psi$ chromoelectric polarizability from lattice data,''
+%Phys. Rev. D \textbf{98}, no.3, 034030 (2018).
+%doi:10.1103/PhysRevD.98.034030
+%[arXiv:1801.08984 [hep-ph]].
+
+
+
+
+%\bibitem{Behnke:2015qja}
+%O.~Behnke, A.~Geiser and M.~Lisovyi,
+%``Charm, Beauty and Top at HERA,''
+%Prog. Part. Nucl. Phys. \textbf{84}, 1-72 (2015).
+%doi:10.1016/j.ppnp.2015.06.002
+%[arXiv:1506.07519 [hep-ex]].
+
+
 \bibitem{Gryniuk:2016mpk} 
   O.~Gryniuk and M.~Vanderhaeghen,
   %``Accessing the real part of the forward $J/\psi$-p scattering amplitude from $J/\psi$ photoproduction on protons around threshold,''
@@ -403,6 +731,66 @@ Model, Projektnummer 204404729 - SFB 1044], and in part through the Cluster of E
 %  doi:10.1103/PhysRevD.94.074001
 %  [arXiv:1608.08205 [hep-ph]].
   %%CITATION = doi:10.1103/PhysRevD.94.074001;%%
+
+\bibitem{Kaidalov:1992hd} 
+  A.~B.~Kaidalov and P.~E.~Volkovitsky,
+  %``Heavy quarkonia interactions with nucleons and nuclei,''
+  Phys.\ Rev.\ Lett.\  {\bf 69}, 3155 (1992).
+  % doi:10.1103/PhysRevLett.69.3155
+  %%CITATION = doi:10.1103/PhysRevLett.69.3155;%%
+
+
+\bibitem{Sibirtsev:2005ex} 
+  A.~Sibirtsev and M.~B.~Voloshin,
+  %``The Interaction of slow J/psi and psi' with nucleons,''
+  Phys.\ Rev.\ D {\bf 71}, 076005 (2005).
+%  doi:10.1103/PhysRevD.71.076005
+ % [hep-ph/0502068].
+  %%CITATION = doi:10.1103/PhysRevD.71.076005;%%
+
+
+%\cite{Ali:2019lzf}
+\bibitem{Ali:2019lzf}
+A.~Ali \textit{et al.} [GlueX],
+%``First Measurement of Near-Threshold J/ψ Exclusive Photoproduction off the Proton,''
+Phys. Rev. Lett. \textbf{123}, no.7, 072001 (2019)
+doi:10.1103/PhysRevLett.123.072001
+[arXiv:1905.10811 [nucl-ex]].
+%39 citations counted in INSPIRE as of 26 Apr 2020
+
+%\cite{Meziani:2016lhg}
+\bibitem{Meziani:2016lhg}
+Z.~Meziani, S.~Joosten, M.~Paolone, E.~Chudakov, M.~Jones, {\it et al.}
+%``A Search for the LHCb Charmed 'Pentaquark' using Photo-Production of $J/{\psi}$ at Threshold in Hall C at Jefferson Lab,''
+[arXiv:1609.00676 [hep-ex]].
+%30 citations counted in INSPIRE as of 26 Apr 2020
+
+%cite{Joosten:2020}
+\bibitem{Joosten:2020}
+Private communication.
+
+\bibitem{CLAS12-tcs:proposal}
+Jefferson Lab Experiment E12-12-001, Co-spokespersons, P. Nadel-Turonski (contact person),  M.~Guidal, T.~Horn, R. ~Paremuzyan and S.~Stepanyan, PAC40 \url{https://misportal.jlab.org/mis/physics/experiments/viewProposal.cfm?paperId=701}}.
+
+\bibitem{SoLIDjpsi:proposal}
+Jefferson Lab Experiment E12-12-006, Co-spokespersons, K. Hafidi, Z.-E. Meziani (contact person), X. Qian, N. Sparveris and Z. Zhao, PAC40 \url{https://www.jlab.org/exp_prog/proposals/12/PR12-12-006.pdf}}.
+
+\bibitem{Accardi:2012qut} 
+  A.~Accardi {\it et al.},
+  %``Electron Ion Collider: The Next QCD Frontier : Understanding the glue that binds us all,''
+  Eur.\ Phys.\ J.\ A {\bf 52}, no. 9, 268 (2016).
+  % doi:10.1140/epja/i2016-16268-9
+  % [arXiv:1212.1701 [nucl-ex]].
+  %%CITATION = doi:10.1140/epja/i2016-16268-9;%%
+
+\bibitem{Ji:1994av}
+X.~Ji,
+%``A QCD analysis of the mass structure of the nucleon,''
+Phys. Rev. Lett. \textbf{74}, 1071-1074 (1995). 
+%doi:10.1103/PhysRevLett.74.1071
+%[arXiv:hep-ph/9410274 [hep-ph]].
+
+  
 
 \bibitem{Barger:1975ng} 
   V.~D.~Barger and R.~J.~N.~Phillips,
@@ -415,24 +803,38 @@ Model, Projektnummer 204404729 - SFB 1044], and in part through the Cluster of E
 \bibitem{Redlich:2000cb} 
   K.~Redlich, H.~Satz and G.~M.~Zinovjev,
   %``Photoproduction constraints on J / psi nucleon interactions,''
-  Eur.\ Phys.\ J.\ C {\bf 17}, 461 (2000)
+  Eur.\ Phys.\ J.\ C {\bf 17}, 461 (2000).
 %  doi:10.1007/s100520000488
  % [hep-ph/0003079].
   %%CITATION = doi:10.1007/s100520000488;%%
 
-\bibitem{Kaidalov:1992hd} 
-  A.~B.~Kaidalov and P.~E.~Volkovitsky,
-  %``Heavy quarkonia interactions with nucleons and nuclei,''
-  Phys.\ Rev.\ Lett.\  {\bf 69}, 3155 (1992).
-  % doi:10.1103/PhysRevLett.69.3155
-  %%CITATION = doi:10.1103/PhysRevLett.69.3155;%%
- 
+\bibitem{Tanabashi:2018oca}
+M.~Tanabashi \textit{et al.} [Particle Data Group],
+%``Review of Particle Physics,''
+Phys. Rev. D \textbf{98}, no.3, 030001 (2018). 
+%doi:10.1103/PhysRevD.98.030001
+
+
+\bibitem{Deng:2016ktl}
+W.~Deng, H.~Liu, L.~Gui and X.~Zhong,
+%``Spectrum and electromagnetic transitions of bottomonium,''
+Phys. Rev. D \textbf{95}, no.7, 074002 (2017). 
+%doi:10.1103/PhysRevD.95.074002
+%[arXiv:1607.04696 [hep-ph]].
+
+\bibitem{Brambilla:2015rqa}
+N.~Brambilla, G.~Krein, J.~Tarrús Castellà and A.~Vairo,
+%``Long-range properties of $1S$ bottomonium states,''
+Phys. Rev. D \textbf{93}, no.5, 054002 (2016).
+%doi:10.1103/PhysRevD.93.054002
+%[arXiv:1510.05895 [hep-ph]]. 
+
  
 %\cite{Adloff:2000vm}
 \bibitem{Adloff:2000vm} 
   C.~Adloff {\it et al.} [H1 Collaboration],
   %``Elastic photoproduction of J / psi and Upsilon mesons at HERA,''
-  Phys.\ Lett.\ B {\bf 483}, 23 (2000)
+  Phys.\ Lett.\ B {\bf 483}, 23 (2000).
   % doi:10.1016/S0370-2693(00)00530-X
 %  [hep-ex/0003020].
   %%CITATION = doi:10.1016/S0370-2693(00)00530-X;%%
@@ -442,7 +844,7 @@ Model, Projektnummer 204404729 - SFB 1044], and in part through the Cluster of E
 \bibitem{Breitweg:1998ki} 
   J.~Breitweg {\it et al.} [ZEUS Collaboration],
   %``Measurement of elastic Upsilon photoproduction at HERA,''
-  Phys.\ Lett.\ B {\bf 437}, 432 (1998)
+  Phys.\ Lett.\ B {\bf 437}, 432 (1998).
   % doi:10.1016/S0370-2693(98)01081-8
 %  [hep-ex/9807020].
   %%CITATION = doi:10.1016/S0370-2693(98)01081-8;%%
@@ -452,18 +854,34 @@ Model, Projektnummer 204404729 - SFB 1044], and in part through the Cluster of E
 \bibitem{Chekanov:2009zz} 
   S.~Chekanov {\it et al.} [ZEUS Collaboration],
   %``Exclusive photoproduction of upsilon mesons at HERA,''
-  Phys.\ Lett.\ B {\bf 680}, 4 (2009)
+  Phys.\ Lett.\ B {\bf 680}, 4 (2009).
   % doi:10.1016/j.physletb.2009.07.066
 %  [arXiv:0903.4205 [hep-ex]].
   %%CITATION = doi:10.1016/j.physletb.2009.07.066;%%
  
+
+\bibitem{Aaij:2015kea}
+R.~Aaij {\it et al.} [LHCb],
+%``Measurement of the exclusive Υ production cross-section in pp collisions at $ \sqrt{s}=7 $ TeV and 8 TeV,''
+JHEP \textbf{09}, 084 (2015). 
+%doi:10.1007/JHEP09(2015)084
+%[arXiv:1505.08139 [hep-ex]].
+
+
+\bibitem{Sirunyan:2018sav}
+A.~M.~Sirunyan {\it et al.} [CMS],
+%``Measurement of exclusive $\Upsilon$ photoproduction from protons in pPb collisions at $\sqrt{s_\mathrm{NN}} =$ 5.02 TeV,''
+Eur. Phys. J. C \textbf{79}, no.3, 277 (2019). 
+%doi:10.1140/epjc/s10052-019-6774-8
+%[arXiv:1809.11080 [hep-ex]].
+
 
 %\cite{Adloff:1999nr}
 \bibitem{Adloff:1999nr} 
   C.~Adloff {\it et al.} [H1 Collaboration],
   %``Measurement of open beauty production at HERA,''
   Phys.\ Lett.\ B {\bf 467}, 156 (1999)
-  Erratum: [Phys.\ Lett.\ B {\bf 518}, 331 (2001)]
+  Erratum: [Phys.\ Lett.\ B {\bf 518}, 331 (2001)].
   % doi:10.1016/S0370-2693(99)01099-0, 10.1016/S0370-2693(01)01035-8
 %  [hep-ex/9909029].
   %%CITATION = doi:10.1016/S0370-2693(99)01099-0, 10.1016/S0370-2693(01)01035-8;%%
@@ -477,24 +895,53 @@ Model, Projektnummer 204404729 - SFB 1044], and in part through the Cluster of E
   % doi:10.1016/0370-2693(81)90655-9
   %%CITATION = doi:10.1016/0370-2693(81)90655-9;%%
  
-\bibitem{Peskin:1979va} 
-  M.~E.~Peskin,
-  %``Short Distance Analysis for Heavy Quark Systems. 1. Diagrammatics,''
-  Nucl.\ Phys.\ B {\bf 156}, 365 (1979).
-  % doi:10.1016/0550-3213(79)90199-8
-  %%CITATION = doi:10.1016/0550-3213(79)90199-8;%%
 
- 
 
-%\cite{Chekanov:2002xi}
 \bibitem{Chekanov:2002xi} 
   S.~Chekanov {\it et al.} [ZEUS Collaboration],
   %``Exclusive photoproduction of J / psi mesons at HERA,''
-  Eur.\ Phys.\ J.\ C {\bf 24}, 345 (2002)
+  Eur.\ Phys.\ J.\ C \textbf{24}, 345 (2002)
  % doi:10.1007/s10052-002-0953-7
  % [hep-ex/0201043].
   %%CITATION = doi:10.1007/s10052-002-0953-7;%%
-  %274 citations counted in INSPIRE as of 08 Oct 2018
+
+
+
+
+
+\bibitem{git:lager}
+S. Joosten, Argonne l/A-event Generator (2020), GitLab Repository,
+\url{https://eicweb.phy.anl.gov/monte_carlo/lager}
+
+
+\bibitem{Martynov:2002ez}
+E.~Martynov, E.~Predazzi and A.~Prokudin,
+%``Photoproduction of vector mesons in the soft dipole pomeron model,''
+Phys. Rev. D \textbf{67}, 074023 (2003).
+%doi:10.1103/PhysRevD.67.074023
+%[arXiv:hep-ph/0207272 [hep-ph]].
+
+\bibitem{Fiore:2009xk}
+R.~Fiore, L.~Jenkovszky, V.~Magas, S.~Melis and A.~Prokudin,
+%``Exclusive J/Psi electroproduction in a dual model,''
+Phys. Rev. D \textbf{80}, 116001 (2009). 
+%doi:10.1103/PhysRevD.80.116001
+%[arXiv:0911.2094 [hep-ph]].
+
+\bibitem{Breitweg:1998nh}
+J.~Breitweg \textit{et al.} [ZEUS],
+%``Exclusive electroproduction of $\rho^0$ and $J/\psi$ mesons at HERA,''
+Eur. Phys. J. C \textbf{6}, 603-627 (1999). 
+%doi:10.1007/s100529901051
+%[arXiv:hep-ex/9808020 [hep-ex]].
+
+
+\bibitem{Schilling:1973ag}
+K.~Schilling and G.~Wolf,
+%``How to analyze vector meson production in inelastic lepton scattering,''
+Nucl. Phys. B \textbf{61}, 381-413 (1973).
+%doi:10.1016/0550-3213(73)90371-4
+
 
 \end{thebibliography}
 
