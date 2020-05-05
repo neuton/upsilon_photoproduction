@@ -5,6 +5,8 @@ twocolumn,floatfix,amssymb, preprintnumbers, nofootinbib, superscriptaddress]{re
 
 \usepackage{epsf,graphicx,xcolor,amsmath}
 \usepackage{lipsum}
+\usepackage{lineno}
+
 %\linenumbers
 
 %\newcommand{\textit}{\it}
@@ -251,12 +253,12 @@ and from ultra-peripheral pPb collisions at  CMS~\cite{Sirunyan:2018sav}.
 \begin{figure}
 \includegraphics[width=0.47\textwidth]{si_y.pdf}
 \includegraphics[width=0.47\textwidth]{si_bbX.pdf}
-\caption{Upper panel: W-dependence of the $\gamma p \to \Upsilon p$ total cross section.
+\caption{Upper panel: $W$-dependence of the $\gamma p \to \Upsilon p$ total cross section.
 The curve is the result of our global fit with parameters given in Table~\ref{tab:fits}.
 The elastic $\Upsilon$ photo-production data are from HERA: H1~\cite{Adloff:2000vm}
 and ZEUS~\cite{Breitweg:1998ki, Chekanov:2009zz}, and from LHC: LHCb~\cite{Aaij:2015kea} 
 and CMS~\cite{Sirunyan:2018sav}. 
-Lower panel: W-dependence of the 
+Lower panel: $W$-dependence of the 
 total inelastic photoproduction cross section $\gamma p \to b \bar b X$.
 The curve gives a lower limit arising from the contribution of the $\Upsilon(1S)$ state only in the sum of Eq.~(\ref{eq:sigmainel2}) for the $\gamma p \to b \bar b X$ cross section. 
 The open beauty photoproduction data points are from HERA~\cite{Adloff:1999nr} and EMC~\cite{Aubert:1981gx}.}
@@ -319,8 +321,7 @@ $a_{\rm inel}$ are fixed from the $J/\psi$ analysis of Ref.~\cite{Gryniuk:2016mp
 \end{table}
 
 To determine the inelastic normalization constant $C_{\rm inel}$, it was observed in \cite{Gryniuk:2016mpk} for the $J/\psi$ case that around 
-$W = 100$~GeV the inelastic discontinuity is around two orders of magnitude larger than its elastic counterpart. Although there is only one data point for the inclusive $\gamma p \to b \bar b X$ cross section, shown in the lower panel of  
-Fig.~\ref{fig:sigmatot}, it also confirms this finding for the $\Upsilon$-p discontinuities.   
+$W = 100$~GeV the inelastic discontinuity is around two orders of magnitude larger than its elastic counterpart. Although there is only one data point for the inclusive $\gamma p \to b \bar b X$ cross section, shown in the lower panel of  Fig.~\ref{fig:sigmatot}, it also confirms this finding for the $\Upsilon$-p discontinuities.   
 The amplitude $T_{\Upsilon p}$ entering the forward differential cross section $A$ in Eq.~(\ref{eq:brel}) is thus dominated by the normalization constant $C_{\rm inel}$. At high energies around $W \sim 100$~GeV, where the subtraction constant makes a negligible contribution to $A$, we can thus solve Eq.~(\ref{eq:brel}) and fit the normalization $C_{\rm inel}$ from the available high-energy data for the $t$-slope parameter $B$. 
 
  
@@ -329,7 +330,7 @@ The amplitude $T_{\Upsilon p}$ entering the forward differential cross section $
 \includegraphics[width=0.47\textwidth]{b_slope_jpsi.pdf}
 \includegraphics[width=0.47\textwidth]{b_slope_eic1.pdf}
 \caption{
-The W-dependence of the exponential $t$-slope parameter $B$ in $d \sigma / dt$ of Eq.~(\ref{eq:bdef}). The curves are obtained by solving 
+The $W$-dependence of the exponential $t$-slope parameter $B$ in $d \sigma / dt$ of Eq.~(\ref{eq:bdef}). The curves are obtained by solving 
 Eq.~(\ref{eq:brel}) within the dispersive framework  for different values of the subtraction constant $T_0$ in the $J/\psi p $ (upper)  and $\Upsilon p$ (lower) forward scattering amplitudes.
 The $t$-slope data points are from HERA: for $J/\psi$ production from Ref.~\cite{Chekanov:2002xi}, and 
 for $\Upsilon$ production from Ref.~\cite{Chekanov:2009zz}.
@@ -346,7 +347,7 @@ $C_{\rm inel} = 20.5$.
 
 
 We apply the same procedure to the $\Upsilon$ $t$-slope parameter in the lower panel of Fig.~\ref{fig:bslope}, and  show our results for the three scenarios for the subtraction constant $T_0 \equiv T_{\Upsilon p}(0)$ discussed above. We again observe that for $W \geq 100$~GeV, the sensitivity to the subtraction constant becomes vanishingly small. 
-As there is only one data point at $W = 100$~GeV in this case, we fix $a_{\rm inel}$ as in the $J/\psi$ case and fit $C_{\rm inel}$ to the data point at 100 GeV. The obtained value for $C_{\rm inel}$ is listed in Table~\ref{tab:fits}. It is seen that the value of the thus extracted dimensionless parameter $C_{\rm inel}$ is similar within 10 \% between the $J/\psi$ and $\Upsilon$ cases. We also note that in the sum of Eq.~(\ref{eq:sigmainel2}) the $\Upsilon$ contribution  to the inelastic open beauty photoproduction cross section is around 20~\%. 
+As there is only one data point at $W = 100$~GeV in this case, we fix $a_{\rm inel}$ as in the $J/\psi$ case and fit $C_{\rm inel}$ to the data point at 100 GeV. The obtained value for $C_{\rm inel}$ is listed in Table~\ref{tab:fits}. It is seen that the value of the thus extracted dimensionless parameter $C_{\rm inel}$ is similar within 10 \% between the $J/\psi$ and $\Upsilon$ cases. We also note that in the sum of Eq.~(\ref{eq:sigmainel2}) the $\Upsilon$ contribution  to the inelastic open beauty photo-production cross section is around 20~\%. 
 
 \begin{figure}
 \includegraphics[width=0.47\textwidth]{t_y.pdf}
@@ -364,7 +365,7 @@ In Fig.~\ref{fig:psip_psip}, we show the $W$-dependence of real and imaginary pa
 
 
 
-\section{Results for $\Upsilon$ photoproduction at the EIC and discussion}
+\section{Results for $\Upsilon$ photo-production at the EIC and discussion}
 
 We investigate in this section how to extract the subtraction constant from a fit to the 
  differential $\gamma p \to \Upsilon p$ cross section data at an Electron-Ion Collider (EIC). 
@@ -384,8 +385,7 @@ $\gamma p \to \Upsilon p$ data for the two beam settings.
 \begin{tabular*}{\columnwidth}{c @{\extracolsep{\fill}} ccc}
 \hline
 \hline
-\quad setting \quad & \quad $T_{\Upsilon p}(0) \quad &  
- \quad $a_{\Upsilon p}$ (in fm) \quad  & \quad $B_{\Upsilon}$ (in MeV) \quad \\ 
+\quad setting \quad & \quad $T_{\Upsilon p}(0)$ \quad &  \quad $a_{\Upsilon p}$ (in fm) \quad  & \quad $B_{\Upsilon}$ (in MeV) \quad \\ 
 \hline
 1 \input{table2_eic1.tex}
 \hline
@@ -417,8 +417,7 @@ quasi-real regime by requiring that $Q^2 < 1$~GeV$^{2}$.
 \includegraphics[width=0.47\textwidth]{{dsdt_y_eic1_W_12.5}.pdf}
 \includegraphics[width=0.47\textwidth]{{dsdt_y_eic2_W_12.5}.pdf} \\
 \includegraphics[width=0.47\textwidth]{{dsdt_y_eic1_W_21.5}.pdf}
-\includegraphics[width=0.47\textwidth]{{dsdt_y_eic2_W_21.5}.pdf}
-\\
+\includegraphics[width=0.47\textwidth]{{dsdt_y_eic2_W_21.5}.pdf} \\
 \includegraphics[width=0.47\textwidth]{{dsdt_y_eic1_W_35.5}.pdf}
 \includegraphics[width=0.47\textwidth]{{dsdt_y_eic2_W_35.5}.pdf}
 \caption{$t$-dependence of the $\gamma p \to \Upsilon p$ differential cross section 
@@ -436,7 +435,7 @@ assuming the two-parameter exponential fits.
 \includegraphics[width=0.47\textwidth]{dsdt_y_close_eic1.pdf} \\
 \includegraphics[width=0.47\textwidth]{dsdt_y_eic2.pdf}
 \includegraphics[width=0.47\textwidth]{dsdt_y_close_eic2.pdf}
-\caption{W-dependence of the $\gamma p \to \Upsilon p$ differential cross section, extrapolated to $t=0$, 
+\caption{$W$-dependence of the $\gamma p \to \Upsilon p$ differential cross section, extrapolated to $t=0$, 
 for different values of the subtraction constant $T_0 \equiv T_{\Upsilon p} (0)$. The (black circles) data points are obtained from the elastic $\Upsilon$ photoproduction cross section from HERA by using the empirically measured slope parameter, using Eq.~(\ref{eq:brel}). The bands represent the uncertainty propagated based on the EIC generated data points, assuming a one-parameter fit of $T_0$. Upper (lower) panels are for EIC beam setting 1 (beam setting 2) respectively. Right panels give a more detailed view of the lower energy region $W < 25$~GeV.}
 \label{fig:dsigmadt0}
 \end{figure*}
@@ -452,7 +451,7 @@ Only points generated up to $-t$ values of $2.5$ GeV are considered in the fits.
 \includegraphics[width=0.47\textwidth]{b_slope_eic1.pdf}
 \includegraphics[width=0.47\textwidth]{b_slope_eic2.pdf}
 \caption{
-The W-dependence of the $t$-slope parameter $B$ for $\gamma p \to \Upsilon p$ obtained by solving Eq.~(\ref{eq:brel}),
+The $W$-dependence of the $t$-slope parameter $B$ for $\gamma p \to \Upsilon p$ obtained by solving Eq.~(\ref{eq:brel}),
 for different values of the subtraction constant $T_0$ in the forward $\Upsilon$-p scattering amplitude.
 The HERA data point at $W=100$ GeV is from Ref.~\cite{Chekanov:2009zz}. 
 The simulated EIC data points shown are based on the differential in $t$ cross section points. 
@@ -461,7 +460,7 @@ Upper (lower) panel is for EIC beam setting 1 (beam setting 2) respectively.}
 \label{fig:bslopeeic}
 \end{figure}
 
-In Fig.~\ref{fig:dsigmadt0}, we show the W-dependence of the $\gamma p \to \Upsilon p$ differential cross sections extrapolated to t = 0 for the two EIC beam settings considered.  
+In Fig.~\ref{fig:dsigmadt0}, we show the $W$-dependence of the $\gamma p \to \Upsilon p$ differential cross sections extrapolated to t = 0 for the two EIC beam settings considered.  
 We see that in the $W < 25$~GeV region, the precision that can be reached at the EIC will allow to clearly distinguish between the three scenarios for the subtraction constant, and allow to extract this parameter with a precision better than 10 \%. For the region $W > 25$~GeV, beam setting 2 will furthermore allow to also test the slope of the energy dependence of the $\gamma p \to \Upsilon p$ forward differential cross section, and thus allow to perform an independent fit of the $a_{\rm inel}$ parameter, which appears in the parameterization of the imaginary part of the forward $\Upsilon$-p scattering amplitude of Eq.~(\ref{eq:discx}). 
 
 The sensitivity to the subtraction constants in the 
@@ -637,9 +636,9 @@ Nucl. Phys. B \textbf{156}, 391-416 (1979).
   %%CITATION = doi:10.1093/ptep/ptt087;%%
 
 \bibitem{Beane:2014sda} 
-  S.~R.~Beane, E.~Chang, S.~D.~Cohen, W.~Detmold, H.-W.~Lin, K.~Orginos, A.~Parreo and M.~J.~Savage,
+  "Beane, S.R. and Chang, E. and Cohen, S.D. and Detmold, W. and Lin, H. -W. and Orginos, K. and Parre$\tilde{\rm n}$o, A. and Savage, M.J.
   %``Quarkonium-Nucleus Bound States from Lattice QCD,''
-  Phys.\ Rev.\ D {\bf 91}, no. 11, 114503 (2015). 
+  Phys. Rev. D {\bf 91}, no. 11, 114503 (2015). 
   %doi:10.1103/PhysRevD.91.114503
   %[arXiv:1410.7069 [hep-lat]].
   %%CITATION = doi:10.1103/PhysRevD.91.114503;%%
@@ -770,10 +769,10 @@ Z.~Meziani, S.~Joosten, M.~Paolone, E.~Chudakov, M.~Jones, {\it et al.}
 Private communication.
 
 \bibitem{CLAS12-tcs:proposal}
-Jefferson Lab Experiment E12-12-001, Co-spokespersons, P. Nadel-Turonski (contact person),  M.~Guidal, T.~Horn, R. ~Paremuzyan and S.~Stepanyan, PAC40 \url{https://misportal.jlab.org/mis/physics/experiments/viewProposal.cfm?paperId=701}}.
+Jefferson Lab Experiment E12-12-001, Co-spokespersons, P. Nadel-Turonski (contact person),  M.~Guidal, T.~Horn, R. ~Paremuzyan and S.~Stepanyan, PAC40 \url{https://misportal.jlab.org/mis/physics/experiments/viewProposal.cfm?paperId=701}.
 
 \bibitem{SoLIDjpsi:proposal}
-Jefferson Lab Experiment E12-12-006, Co-spokespersons, K. Hafidi, Z.-E. Meziani (contact person), X. Qian, N. Sparveris and Z. Zhao, PAC40 \url{https://www.jlab.org/exp_prog/proposals/12/PR12-12-006.pdf}}.
+Jefferson Lab Experiment E12-12-006, Co-spokespersons, K. Hafidi, Z.-E. Meziani (contact person), X. Qian, N. Sparveris and Z. Zhao, PAC40 \url{https://www.jlab.org/exp_prog/proposals/12/PR12-12-006.pdf}.
 
 \bibitem{Accardi:2012qut} 
   A.~Accardi {\it et al.},
