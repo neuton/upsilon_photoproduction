@@ -3,6 +3,8 @@
 twocolumn,floatfix,amssymb, preprintnumbers, linenumbers,nofootinbib, superscriptaddress]{revtex4} 
 
 \usepackage{epsf,graphicx,xcolor,amsmath}
+
+%%%%%%%%%%%%%%%%%%% REMOVE THESE ON PRODUCTION %%%%%%%%%%%%%%%%%%%%
 %\usepackage{lipsum}
 %\usepackage{lineno}
 % \usepackage{cancel}
@@ -12,8 +14,8 @@ twocolumn,floatfix,amssymb, preprintnumbers, linenumbers,nofootinbib, superscrip
 \newcommand\edited[1]{\colorbox{yellow}{#1}}
 \newcommand\comment[1]{\colorbox{blue!30}{[{\tiny #1}]}}
 \newcommand\removed[1]{\colorbox{red!30}{\st{#1}}}
-
 %\linenumbers
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %\newcommand{\textit}{\it}
 \newcommand{\beq}{\begin{equation}}
@@ -54,7 +56,7 @@ the subtraction constant is proportional to the $\Upsilon$-p scattering length. 
 \section{Introduction}
 
 
-The interaction between heavy quarkonia, such as $J/\psi$ and $\Upsilon$, and light hadrons or nuclei provides a unique window on the gluonic van der Waals interaction in Quantum Chromo Dynamics (QCD). Being a small sized system, the heavy quarkonium $Q \bar Q$ can be treated as a color dipole, and the effective two-gluon exchange interaction between the quarkonium and the light hadron  or nucleus may be estimated from the knowledge of its chromo-electric polarizability, see 
+The interaction between heavy quarkonia, such as $J/\psi$ and $\Upsilon$, and light hadrons or nuclei provides a unique window on the gluonic van der Waals interaction in Quantum ChromoDynamics (QCD). Being a small sized system, the heavy quarkonium $Q \bar Q$ can be treated as a color dipole, and the effective two-gluon exchange interaction between the quarkonium and the light hadron  or nucleus may be estimated from the knowledge of its chromo-electric polarizability, see 
 Refs.~\cite{Kharzeev:1995ij,Voloshin:2007dx,Hosaka:2016ypm} for reviews and references therein. 
 Provided this effective interaction is strong enough, 
 a bound state between the
@@ -303,7 +305,7 @@ we thus start by simply fixing $b_{\rm el}$ and
 $b_{\rm inel}$ to the values obtained in the $J/\psi$ analysis~\cite{Gryniuk:2016mpk}. 
 The high-energy elastic slope parameter $a_{\rm el}$ and  
 the elastic normalization constant $C_{\rm el}$ 
-are then fitted to the available data points for the elastic $\Upsilon$ photo-production total cross section, as shown in Fig.~\ref{fig:sigmatot} (upper panel), yielding the parameter values shown in Table~\ref{tab:fits} (first column).  
+are then fitted to the available data points for the elastic $\Upsilon$ photo-production total cross section, as shown in Fig.~\ref{fig:sigmatot} (upper panel), yielding the parameter values shown in Table~\ref{tab:fits} (second column).  
 %We obtain for the elastic photo-production total cross section data \input{chisqr.tex}
 
 
@@ -349,16 +351,17 @@ and for $\Upsilon$ from~\cite{Chekanov:2009zz}.
 \end{figure}
 
 
-We show this \removed{fitting procedure to} \edited{constraint based} \edited{on} the $t$-slope parameter $B$ in Fig.~\ref{fig:bslope}, and illustrate it first for the $J/\psi$ case (upper panel). In solving Eq.~(\ref{eq:brel}) for $B$, 
-we use the total cross section data for 
-$\sigma(\gamma p \to J/\psi p)$ which fixes the elastic discontinuity. Furthermore, on the left hand side of Eq.~(\ref{eq:brel}), we need the real and imaginary parts of the forward scattering amplitude to determine $A$, according to Eq.~(\ref{eq:dsigmadt0_gapjpsip}). 
+We show this \removed{fitting procedure to} \edited{constraint based} \edited{on} the $t$-slope parameter $B$ in Fig.~\ref{fig:bslope}, and illustrate \removed{it} \edited{the calculation procedure} first for the $J/\psi$ case (upper panel).
+\comment{Perhaps we should somehow say the equations mentioned further,}
+\comment{are to be read by replacing ``$\Upsilon$'' to ``$J/\psi$'' therein.}
+In solving Eq.~(\ref{eq:brel}) for $B$, we use the total cross section data for $\sigma(\gamma p \to J/\psi p)$ which fixes the elastic discontinuity. Furthermore, on the left hand side of Eq.~(\ref{eq:brel}), we need the real and imaginary parts of the forward scattering amplitude to determine $A$, according to Eq.~(\ref{eq:dsigmadt0_gapjpsip}). 
 For the imaginary part of the amplitude, which is described by its elastic and inelastic discontinuities, we use $C_{\rm inel}$ and $a_{\rm inel}$ as fit parameters.   
 The real part of the amplitude is calculated from the dispersion relation of Eq.~(\ref{eq:disp}) for three values of the subtraction constant $T_0 \equiv T_{\psi p}(0)$, considered in Ref.~\cite{Gryniuk:2016mpk}. The solution of Eq.~(\ref{eq:brel}) for these three values of $T_0$ is shown in Fig.~\ref{fig:bslope} and compared with the HERA data for the $t$-slope. One firstly sees from Fig.~\ref{fig:bslope} that for $W \geq 50$~GeV, the sensitivity to the subtraction constant becomes vanishingly small, thus allowing to determine $a_{\rm inel}$ and $C_{\rm inel}$ from a fit to the HERA data as: $a_{\rm inel} = 1.20$ and 
 $C_{\rm inel} = 20.5$. 
 
 
 We apply the same procedure to the $\Upsilon$ $t$-slope parameter in the lower panel of Fig.~\ref{fig:bslope}, and  show our results for the three scenarios for the subtraction constant $T_0 \equiv T_{\Upsilon p}(0)$ discussed above. We again observe that for $W \geq 100$~GeV, the sensitivity to the subtraction constant becomes vanishingly small. 
-As there is only one data point at $W = 100$~GeV in this case, we fix $a_{\rm inel}$ as in the $J/\psi$ case and fit $C_{\rm inel}$ to the data point at 100 GeV. The obtained value for $C_{\rm inel}$ is listed in Table~\ref{tab:fits}. It is seen that the value of the thus extracted dimensionless parameter $C_{\rm inel}$ is similar within 10 \% between the $J/\psi$ and $\Upsilon$ cases. We also note that in the sum of Eq.~(\ref{eq:sigmainel2}) the $\Upsilon$ contribution  to the inelastic open beauty photo-production cross section is around 20~\%. 
+As there is only one data point at $W = 100$~GeV in this case, we fix $a_{\rm inel}$ to the $J/\psi$ value and \removed{fit} \edited{extract} $C_{\rm inel}$ \edited{by constraining the $t$-slope} to the data point at 100 GeV. The obtained value for $C_{\rm inel}$ is listed in Table~\ref{tab:fits}. It is seen that the value of the thus extracted dimensionless parameter $C_{\rm inel}$ is similar within 10 \% between the $J/\psi$ and $\Upsilon$ cases. We also note that in the sum of Eq.~(\ref{eq:sigmainel2}) the $\Upsilon$ contribution  to the inelastic open beauty photo-production cross section is around 20~\%. 
 
 \begin{figure}
 \includegraphics[width=0.47\textwidth]{t_y.pdf}
@@ -406,9 +409,9 @@ $\gamma p \to \Upsilon p$ data for the two beam settings.
 \end{tabular*}
 \caption{Values of 
 the subtraction constant 
-$T_{\Upsilon p}(0)$ (first column), 
-the corresponding $\Upsilon$-p s-wave scattering length $a_{\Upsilon p}$ (second column), 
-and the corresponding $\Upsilon$-nuclear matter binding energy $B_\Upsilon$, according to Eq.~(\ref{eq:nmbe}) (third column).
+$T_{\Upsilon p}(0)$ (second column), 
+the corresponding $\Upsilon$-p s-wave scattering length $a_{\Upsilon p}$ (third column), 
+and the corresponding $\Upsilon$-nuclear matter binding energy $B_\Upsilon$, according to Eq.~(\ref{eq:nmbe}) (fourth column).
 The uncertainty estimates are propagated based on the generated EIC differential cross section data points.
 }
 \label{tab:scattlength}
@@ -440,7 +443,7 @@ assuming the two-parameter exponential fits.}
 \caption{$W$-dependence of the $\gamma p \to \Upsilon p$ differential cross section, extrapolated to $t=0$, 
 for different values of the subtraction constant $T_0 \equiv T_{\Upsilon p} (0)$. The (\edited{white disks}) data points are obtained from the elastic $\Upsilon$ photo-production cross 
 section from HERA~\cite{Adloff:2000vm,Breitweg:1998ki,Chekanov:2009zz}
- by using the empirically measured slope parameter \edited{from~\cite{Chekanov:2009zz}}, using Eq.~(\ref{eq:brel}). The bands represent the uncertainty propagated based on the EIC simulated  data points, assuming a one-parameter fit of $T_0$. Upper (lower) panels are for EIC beam setting 1 (beam setting 2) respectively. Right panels give a more detailed view of the lower energy region $W < 25$~GeV.}
+ by using the empirically measured slope parameter \edited{in~\cite{Chekanov:2009zz}}, using Eq.~(\ref{eq:brel}). The bands represent the uncertainty propagated based on the EIC simulated  data points, assuming a one-parameter fit of $T_0$. Upper (lower) panels are for EIC beam setting 1 (beam setting 2) respectively. Right panels give a more detailed view of the lower energy region $W < 25$~GeV.}
 \label{fig:dsigmadt0}
 \end{figure*}
 
@@ -456,8 +459,8 @@ In Fig.~\ref{fig:dsigmadt}, we show the simulated results for the $t$-dependence
 differential cross sections for different values of $W$,  
 corresponding to the two EIC beam settings. 
 In each case we consider the three scenarios for the subtraction constant $T_0$ discussed above. 
-For the generated data, the exponential $t$-slope $B$ is obtained through solution of Eq.~(\ref{eq:brel}). 
-The error bands represent the uncertainty propagated based on the EIC generated data points, assuming the two-parameter exponential fits of Eq.~(\ref{eq:bdef}). 
+For the generated EIC data, the exponential $t$-slope $B$ is obtained through solution of Eq.~(\ref{eq:brel}). 
+The error bands represent the uncertainty propagated based on the data points, assuming the two-parameter exponential fits of Eq.~(\ref{eq:bdef}). 
 Only points generated up to $-t$ values of $2.5$ GeV are considered in the fits.
 
 
@@ -497,7 +500,7 @@ The work of SJ and ZEM is supported by the US DOE contract DE-AC02-06CH11357.
 
 \section{Event Generation\label{apx-evgen}}
 In order to simulate a realistic event sample for $\Upsilon$ events at the EIC,
-we added the formalism of this paper to the Argonne l/A-event Generator (\textsc{lager}) \cite{git:lager}
+we added the formalism of this paper to the Argonne l/A-event Generator (\textsc{lager}) \cite{git:lager}.
 \textsc{Lager} is a modular accept-reject generator capable of simulating both fixed-target and collider kinematics. Below we describe the model components used to obtain the event samples for this work.
 
 \subsection{Differential electro-production cross section}
